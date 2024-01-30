@@ -1,22 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 import { getCollection } from "astro:content";
 import Link from "../components/Link.astro";
 
 const collection = "epk";
-const allPosts = await getCollection(collection);
+const allPosts = await getCollection(collection); // we ignore this for now
 ---
 
-<Layout title='Welcome to Astro.'>
-  <p>west of eden gang</p>
-  <p>epk:</p>
-  {
-    allPosts?.map((post, index) => (
-      <div>
-        <Link href=`epk/${post.slug}`>{post.slug}</Link>
-        <p>{post.data.name}</p>
-      </div>
-    ))
-  }
-</Layout>
+<Layout title='West of Eden'>asdads</Layout>

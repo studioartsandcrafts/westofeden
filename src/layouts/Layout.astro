@@ -1,9 +1,19 @@
 ---
 interface Props {
   title: string;
+  colors?: {
+    fg?: string;
+    bg?: string;
+  };
 }
 
-const { title } = Astro.props;
+const { title, colors } = Astro.props;
+
+//  the extra lines at the bottom is because you need to redefine variables for it take affect ..?
+// doesnt cascade it seems
+const colorfg = colors?.fg ? `--c-light: ${colors.fg};` : "";
+const colorbg = colors?.bg ? `--c-dark: ${colors.bg};` : "";
+const colorsStyles = colorfg + colorbg;
 ---
 
 <!doctype html>
@@ -16,8 +26,45 @@ const { title } = Astro.props;
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body style={colorsStyles}>
     <slot />
   </body>
 </html>
-<style is:global></style>
+<style is:global lang="postcss">
+  @font-face {
+    font-family: "Charter";
+    src: local("Charter"), 
+      url("/fonts/charter_regular.woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Charter";
+    src: local("Charter"), 
+      url("/fonts/charter_regular.woff2");
+      font-weight: normal;
+    font-style: italics;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Archivo Narrow";
+    src: local("Archivo Narrow"), 
+      url("/fonts/ArchivoNarrow-SemiBold.woff2");
+    font-display: swap;
+  }
+  :root {
+    --c-light: #F4F4F4;
+    --c-dark: #423229;
+
+    /* // abstraction to allow flipping colors */
+    --c-bg: var(--c-light);
+    --c-fg: var(--c-dark);
+  }
+
+  body {
+    --c-bg: var(--c-light); 
+    --c-fg: var(--c-dark);
+    @apply bg-bg text-fg font-sans;
+  }
+</style>
