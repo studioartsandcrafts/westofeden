@@ -1,0 +1,28 @@
+---
+interface Props {
+  title: string;
+  data: {
+    [key: string]: string;
+  };
+}
+const colors = ["#A44500", "#1A3E15", "#286689", '#678100',  '#826B1B' ];
+const { title, data } = Astro.props;
+---
+<p class="mb-2">{title}</p>
+<div class="flex mb-12">
+  {Object.entries(data).map(([key, value],index) => 
+  <div style=`width: ${value}` class="chartitem relative" >
+        <p class="w-full border-y-2 border-r-2 border-fg px-1 py-2" style=`background: ${colors[index]}` >{value}</p>
+        <label class="absolute top-full py-2 left-0 leading-none">{key}</label>
+    </div>
+    )}
+</div>
+
+<style lang="postcss">
+    .chartitem:first-child {
+        @apply border-l-2 border-fg;
+    }
+    .chartitem:last-child>label {
+        @apply text-right right-0 left-auto;
+    }
+</style>

@@ -1,10 +1,139 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+
+import { Image } from "astro:assets";
+import group1 from "../images/group1.jpg";
 import Link from "../components/Link.astro";
+import { YouTube } from "@astro-community/astro-embed-youtube";
+import Chart from "../components/Chart.astro";
 
 const collection = "epk";
 const allPosts = await getCollection(collection); // we ignore this for now
+
+const streamingLinks = {
+  Spotify: "http://example.com",
+  Soundcloud: "http://example.com",
+  "Apple Music": "http://example.com",
+};
+const socialLinks = {
+  Tikok: "http://example.com",
+  Instagram: "http://example.com",
+  Youtube: "http://example.com",
+  Twitter: "http://example.com",
+};
+
+const genderSplit = {
+  male: "56%",
+  female: "39%",
+  "nonbinary +unspecified": "5%",
+};
+const ageRange = {
+  "<18": "6%",
+  "18-22": "33%",
+  "23-27": "34%",
+  "28-34": "17%",
+  "35+": "10%",
+};
 ---
 
-<Layout title='West of Eden'>asdads</Layout>
+<Layout title="West of Eden">
+  <section id="top">
+    <div
+      class="tableofcontent grid grid-cols-2 text-xl gap-2 mt-2 relative z-20"
+    >
+      <p class="link">
+        <Link href={"#photos"}>Photos</Link>
+      </p>
+      <p class="link">
+        <Link href={"#contact"}>Contact</Link>
+      </p>
+    </div>
+    <h1 class="title z-10 relative">
+      <i>West of Eden</i>
+    </h1>
+    <Image src={group1} alt="A bird." class="w-full -mt-6 mb-2" />
+    <h2 class="inline-flex w-full justify-between font-bold text-6xl">
+      <b>Press</b><b>Kit</b>
+    </h2>
+  </section>
+  <section>(...Music goes here...)</section>
+
+  <section id="about" class="">
+    <h2 class="subheading">About</h2>
+    <p class="font-serif text-xl indent-12">
+      Your music EPK should include a short artist bio. However, keep your goal
+      in mind when writing a musician bio for this section of your press kit;
+      rather than focusing on live performance highlights, talk about your music
+      specifically. Your music EPK should include a short artist bio. However,
+      keep your goal in mind when writing a musician bio for this section of
+      your press kit; rather than focusing on live performance highlights, talk
+      about your music specifically.
+    </p>
+
+    <div class="grid grid-cols-2 text-xl gap-2 mt-2">
+      <div>
+        {
+          Object.entries(streamingLinks).map(([key, href]) => (
+            <p class="link">
+              <Link href={href}>{key}</Link>
+            </p>
+          ))
+        }
+      </div>
+      <div>
+        {
+          Object.entries(socialLinks).map(([key, href]) => (
+            <p class="link">
+              <Link href={href}>{key}</Link>
+            </p>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+  <section
+    class="bg-bg text-fg mt-2 pb-2 pt-2"
+    style="--c-fg: var(--c-light); --c-bg: var(--c-dark);"
+  >
+    <h2 class="text-center font-serif text-4xl mb-3">
+      <i>Demographics</i>
+    </h2>
+    <h3>Top Countries</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 text-2xl font-serif mb-4">
+      <p>1. USA</p>
+      <p>2. Finland</p>
+      <p>3. Japan</p>
+      <p>4. Taiwan</p>
+    </div>
+    <Chart title="Gender Split" data={genderSplit} />
+    <Chart title="Age Range" data={ageRange} />
+  </section>
+  <section>
+    <h2 class="subheading" id="mv">MV</h2>
+    <YouTube id="osAEtwyeWC0" />
+  </section>
+  <section>
+    <h2 class="subheading" id="contact">Contact</h2>
+  </section>
+</Layout>
+
+<style lang="postcss">
+    section {
+        @apply px-4 max-w-xl mx-auto;
+    }
+    .title {
+        @apply text-[30vmin] md:text-[11rem] font-serif tracking-tight leading-[0.85] text-center;
+        @apply -ml-[0.2em];
+    }
+    .tableofcontent .link:nth-child(2n) {
+        @apply justify-self-end;
+    }
+    .link {
+        @apply underline hover:text-bg hover:bg-fg w-fit;
+    }
+    .subheading {
+        @apply font-bold text-4xl text-center mt-4;
+    }
+   
+</style>

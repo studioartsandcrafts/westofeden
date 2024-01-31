@@ -1,4 +1,6 @@
 ---
+import Footer from "../components/Footer.astro";
+
 interface Props {
   title: string;
   colors?: {
@@ -17,17 +19,18 @@ const colorsStyles = colorfg + colorbg;
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang="en">
   <head>
-    <meta charset='UTF-8' />
-    <meta name='description' content='Astro description' />
-    <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <meta name='generator' content={Astro.generator} />
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body style={colorsStyles}>
     <slot />
+    <Footer />
   </body>
 </html>
 <style is:global lang="postcss">
@@ -41,10 +44,10 @@ const colorsStyles = colorfg + colorbg;
   }
   @font-face {
     font-family: "Charter";
-    src: local("Charter"), 
-      url("/fonts/charter_regular.woff2");
-      font-weight: normal;
-    font-style: italics;
+    src: local("Charter italic"), 
+      url("/fonts/charter_italic.woff2");
+    font-weight: normal;
+    font-style: italic;
     font-display: swap;
   }
   @font-face {
@@ -52,6 +55,9 @@ const colorsStyles = colorfg + colorbg;
     src: local("Archivo Narrow"), 
       url("/fonts/ArchivoNarrow-SemiBold.woff2");
     font-display: swap;
+  }
+  p,h1,h2,h3,h4 {
+    @apply tracking-tight;
   }
   :root {
     --c-light: #F4F4F4;
@@ -66,5 +72,6 @@ const colorsStyles = colorfg + colorbg;
     --c-bg: var(--c-light); 
     --c-fg: var(--c-dark);
     @apply bg-bg text-fg font-sans;
+    scroll-behavior: smooth;
   }
 </style>
