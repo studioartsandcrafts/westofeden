@@ -7,6 +7,7 @@ import group1 from "../images/group1.jpg";
 import Link from "../components/Link.astro";
 import { YouTube } from "@astro-community/astro-embed-youtube";
 import Chart from "../components/Chart.astro";
+import Player from "../components/Player.svelte";
 
 const collection = "epk";
 const allPosts = await getCollection(collection); // we ignore this for now
@@ -70,7 +71,8 @@ const ageRange = {
       <b>Press</b><b>Kit</b>
     </h2>
   </section>
-  <section>(...Music goes here...)</section>
+
+  <Player client:load />
 
   <section id="about" class="">
     <h2 class="subheading">About</h2>
@@ -84,8 +86,11 @@ const ageRange = {
       about your music specifically.
     </p>
 
-    <div class="grid grid-cols-2 text-xl gap-2 mt-2">
+    <div
+      class="grid grid-cols-2 md:grid-cols-3 text-xl gap-2 mt-2 text-lg mb-6"
+    >
       <div>
+        <h3 class="font-serif italic text-2xl">Streaming</h3>
         {
           Object.entries(streamingLinks).map(([key, href]) => (
             <p class="link">
@@ -95,6 +100,7 @@ const ageRange = {
         }
       </div>
       <div>
+        <h3 class="font-serif italic text-2xl">Socials</h3>
         {
           Object.entries(socialLinks).map(([key, href]) => (
             <p class="link">
@@ -102,6 +108,16 @@ const ageRange = {
             </p>
           ))
         }
+      </div>
+      <div>
+        <h3 class="font-serif italic text-2xl">Contact</h3>
+        <p>woecollective@gmail.com</p>
+        <p>himynameisjun.3@gmail.com</p>
+        <p class="invisible" aria-hidden>*</p>
+        <p class="">
+          <a class="link" href="/WOETechRider.pdf" target="_blank">Tech Rider</a
+          >
+        </p>
       </div>
     </div>
   </section>
@@ -126,9 +142,6 @@ const ageRange = {
     <h2 class="subheading" id="mv">MV</h2>
     <YouTube id="osAEtwyeWC0" />
   </section>
-  <section>
-    <h2 class="subheading" id="contact">Contact</h2>
-  </section>
 </Layout>
 
 <style lang="postcss">
@@ -142,7 +155,7 @@ const ageRange = {
     .tableofcontent .link:nth-child(2n) {
         @apply justify-self-end;
     }
-    .link {
+    :global(.link) {
         @apply underline hover:text-bg hover:bg-fg w-fit;
     }
     .subheading {
