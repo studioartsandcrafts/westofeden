@@ -9,7 +9,7 @@ const { href, class: className } = Astro.props;
 const link = href;
 ---
 
-<a href={link} class=`${className}`>
+<a href={link} target="_blank" rel="noopener noreferrer" class=`${className}`>
   <slot />
 </a>
 

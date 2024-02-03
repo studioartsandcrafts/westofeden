@@ -11,18 +11,24 @@
   }
   const tracklist: Track[] = [
     {
-      artist: "owen",
-      title: "miku nation ad read",
-      src: "/mikunation_ad21.mp3",
+      artist: "WEST OF EDEN",
+      title: "Butterfly",
+      src: "/butterfly_sclol.mp3",
       links: {
-        soundcloud: "https://google.com",
-        spotify: "https://google.com",
+        soundcloud: "https://soundcloud.com/westofeden-music/butterfly",
+        spotify:
+          "https://open.spotify.com/track/2wqa7edQscmRTT46aoHCNS?si=7bf920dc96bc418c",
       },
     },
     {
-      artist: "idk ",
-      title: "triple baka",
-      src: "/youtube_n5n7CSGPzqw_audio.mp3",
+      artist: "WEST OF EDEN",
+      title: "Won't Let You Go (feat. riensu)",
+      src: "/wlyg_master.wav",
+      links: {
+        soundcloud: "https://soundcloud.com/westofeden-music/wont-let-you-go",
+        spotify:
+          "https://open.spotify.com/track/5xmcU7dotR2SeiYg43cMQX?si=76b63a7013b74b35",
+      },
     },
   ];
 
@@ -32,7 +38,7 @@
   let duration;
   let currentTime = 0;
   let paused = true; // <- do i need this
-  let volume = 0.02;
+  let volume = 0.1;
 
   let slider;
 
