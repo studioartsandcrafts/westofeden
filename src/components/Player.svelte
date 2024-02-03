@@ -146,26 +146,45 @@
         <p>{track.artist}</p>
       </div>
       <div class="flex flex-col items-end">
-        <button
-          class="playbtn font-serif italic text-2xl"
-          on:click={() => playPauseSong(index)}
-          disabled={currentTrack.src === track.src &&
-            isPlaying &&
-            (status === "canplay" ||
-              status === "canplaythrough" ||
-              status === "waiting")}
-        >
-          {#if currentTrack.src !== track.src}
-            Play
-          {:else if currentTrack.src === track.src && isPlaying && (status === "canplay" || status === "canplaythrough" || status === "waiting")}
-            <!-- <span class="loader"></span> -->
-            <span class="loader2 absolute"></span>
-          {:else if currentTrack.src === track.src && isPlaying === true}
-            Pause
-          {:else if currentTrack.src === track.src && isPlaying === false}
-            Play
-          {/if}
-        </button>
+        <div>
+          <button class="p-2 font-serif italic text-2xl" type="button">
+            <svg
+              fill="none"
+              viewBox="0 0 38 34"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m24.213 12.943v7.5833m6-13.052v18.521m6-25.323v32.125m-34.235-21.335h6.4792l10.256-9.1368v29.819l-10.256-9.1371h-6.4789v-11.545z"
+                stroke="#000"
+                stroke-linejoin="bevel"
+                stroke-width="3"
+              />
+            </svg>
+          </button>
+
+          <button
+            class="playbtn font-serif italic text-2xl"
+            type="button"
+            on:click={() => playPauseSong(index)}
+            disabled={currentTrack.src === track.src &&
+              isPlaying &&
+              (status === "canplay" ||
+                status === "canplaythrough" ||
+                status === "waiting")}
+          >
+            {#if currentTrack.src !== track.src}
+              Play
+            {:else if currentTrack.src === track.src && isPlaying && (status === "canplay" || status === "canplaythrough" || status === "waiting")}
+              <!-- <span class="loader"></span> -->
+              <span class="loader2 absolute"></span>
+            {:else if currentTrack.src === track.src && isPlaying === true}
+              Pause
+            {:else if currentTrack.src === track.src && isPlaying === false}
+              Play
+            {/if}
+          </button>
+        </div>
+
         <div class="flex gap-4 mt-1">
           {#if "links" in track && track.links !== undefined}
             {#each Object.entries(track.links) as [name, href]}
