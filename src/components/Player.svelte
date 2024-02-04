@@ -32,6 +32,26 @@
           "https://open.spotify.com/track/5xmcU7dotR2SeiYg43cMQX?si=76b63a7013b74b35",
       },
     },
+    {
+      artist: "WEST OF EDEN, jun.e, slone",
+      title: "AGAIN (demo)",
+      src: "/AGAIN_snippet.mp3",
+    },
+    {
+      artist: "WEST OF EDEN, yoku, wil, keanu.",
+      title: "maybe some more (demo)",
+      src: "/maybe_some_more_snippet.mp3",
+    },
+    {
+      artist: "WEST OF EDEN, keanu., riensu",
+      title: "ALRIGHT (demo)",
+      src: "/ALRIGHT_snippet.mp3",
+    },
+    {
+      artist: "WEST OF EDEN, slone, keanu., jun.e, rayne, riensu",
+      title: "CONTACT (demo)",
+      src: "/CONTACT_snippet.mp3",
+    },
   ];
 
   let currentIndex = -1;
@@ -114,7 +134,7 @@
   function saveVolume() {
     const isBrowser = typeof window !== "undefined";
     if (!isBrowser) return;
-    localStorage.setItem("volume", volume2.toString());
+    localStorage.setItem("volume", Math.round(volume2).toString());
   }
 </script>
 

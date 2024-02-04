@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { getCollection } from "astro:content";
+//import { getCollection } from "astro:content";
 
 import { Image } from "astro:assets";
 import Link from "../components/Link.astro";
@@ -10,8 +10,8 @@ import Player from "../components/Player.svelte";
 
 import group1 from "../images/DSC04995-Edit.jpg";
 
-const collection = "epk";
-const allPosts = await getCollection(collection); // we ignore this for now
+//const collection = "epk";
+// const allPosts = await getCollection(collection); // we ignore this for now
 
 const streamingLinks = {
   Spotify:
@@ -46,7 +46,7 @@ const ageRange = {
       class="tableofcontent flex justify-between text-xl gap-2 mt-2 relative z-20"
     >
       <p class="link">
-        <Link href={"#photos"}>Photos</Link>
+        <a href={"#photos"}>Photos</a>
       </p>
 
       <svg
@@ -54,6 +54,7 @@ const ageRange = {
         height="2em"
         class="-mb-4"
         viewBox="0 0 25 27"
+        aria-hidden
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -62,7 +63,7 @@ const ageRange = {
       </svg>
 
       <p class="link">
-        <Link href={"#about"}>Contact</Link>
+        <a href={"#contact"}>Contact</a>
       </p>
     </div>
     <h1 class="title z-10 relative">
@@ -76,7 +77,8 @@ const ageRange = {
 
   <Player client:load />
 
-  <section id="about" class="">
+  <section class="relative">
+    <div id="contact" class="-top-[50%] absolute" aria-hidden></div>
     <h2 class="subheading">About</h2>
     <p class="font-serif text-xl indent-12">
       WEST OF EDEN is a music collective based in Seattle, Washington with a
@@ -86,7 +88,7 @@ const ageRange = {
     </p>
 
     <div
-      class="grid grid-cols-2 md:grid-cols-3 text-xl gap-2 mt-2 text-lg mb-6"
+      class="grid grid-cols-2 md:grid-cols-3 text-xl gap-2 mt-6 text-lg mb-6"
     >
       <div>
         <h3 class="font-serif italic text-2xl">Streaming</h3>
@@ -110,12 +112,17 @@ const ageRange = {
       </div>
       <div>
         <h3 class="font-serif italic text-2xl">Contact</h3>
-        <a href="mailto:woecollective@gmail.com"
-          ><p>woecollective@gmail.com</p></a
-        >
-        <a href="mailto:himynameisjun.3@gmail.com"
-          ><p>himynameisjun.3@gmail.com</p></a
-        >
+        <p>
+          <a href="mailto:woecollective@gmail.com" class="link">
+            woecollective@gmail.com
+          </a>
+        </p>
+
+        <p>
+          <a href="mailto:himynameisjun.3@gmail.com" class="link">
+            himynameisjun.3@gmail.com
+          </a>
+        </p>
         <p class="invisible" aria-hidden>*</p>
         <p class="">
           <a class="link" href="/WOETechRider.pdf" target="_blank">Tech Rider</a
@@ -124,8 +131,8 @@ const ageRange = {
       </div>
     </div>
   </section>
-  <section class="bg-bg text-fg mt-2 pb-2 pt-2 border-y-2 border-fg" style="">
-    <h2 class="text-center font-serif text-4xl mb-3">
+  <section class="bg-bg text-fg mt-2 pb-2 pt-2" style="">
+    <h2 class="text-center font-serif text-4xl py-3 border-t-2 border-fg">
       <i>Demographics</i>
     </h2>
     <h3>Top Countries</h3>
@@ -137,6 +144,7 @@ const ageRange = {
     </div>
     <Chart title="Gender Split" data={genderSplit} />
     <Chart title="Age Range" data={ageRange} />
+    <div class="border-b-2 border-fg"></div>
   </section>
   <section>
     <h2 class="subheading" id="mv">MV</h2>
@@ -159,7 +167,7 @@ const ageRange = {
         @apply underline hover:text-bg hover:bg-fg w-fit;
     }
     .subheading {
-        @apply font-bold text-4xl text-center mt-4;
+        @apply font-bold text-4xl text-center mt-8;
     }
    
 </style>
