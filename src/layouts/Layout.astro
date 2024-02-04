@@ -29,7 +29,14 @@ const colorsStyles = colorfg + colorbg;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <meta property="og:image" content="socials_preview.jpg" />
+
+    <meta name="og:description" content={description} />
+    <meta name="og:title" content={title} />
+
+    <meta
+      property="og:image"
+      content=`${import.meta.env.SITE}/socials_preview.jpg`
+    />
     <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body style={colorsStyles}>
