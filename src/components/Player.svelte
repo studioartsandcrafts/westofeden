@@ -11,7 +11,7 @@
   }
   const tracklist: Track[] = [
     {
-      artist: "WEST OF EDEN",
+      artist: "WEST OF EDEN, jun.e, slone",
       title: "Butterfly",
       src: "/butterfly_sclol.mp3",
       links: {
@@ -21,8 +21,8 @@
       },
     },
     {
-      artist: "WEST OF EDEN",
-      title: "Won't Let You Go (feat. riensu)",
+      artist: "WEST OF EDEN, jun.e, riensu, keanu",
+      title: "Won't Let You Go",
       src: "/wlyg_master.wav",
       links: {
         soundcloud: "https://soundcloud.com/westofeden-music/wont-let-you-go",
@@ -97,8 +97,18 @@
 
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
+  let openVolume = false;
+  let volume2 = 10;
+  $: volume = volume2 / 100; // lol this is sooo fucking jank
+
+  function handleKeyDown(event: KeyboardEvent) {
+    // if (openVolume && event.key === "Escape") {
+    //   openVolume = false;
+    // }
+  }
 </script>
 
+<svelte:window on:keydown={handleKeyDown} />
 <!-- svelte-ignore a11y-media-has-caption -->
 <audio
   bind:this={audioPlayer}
@@ -152,21 +162,40 @@
         <p>{track.artist}</p>
       </div>
       <div class="flex flex-col items-end">
-        <div>
-          <button class="p-2 font-serif italic text-2xl" type="button">
-            <svg
-              fill="none"
-              viewBox="0 0 38 34"
-              xmlns="http://www.w3.org/2000/svg"
+        <div class="flex gap-2">
+          {#if currentTrack.src === track.src && currentIndex !== -1}
+            <button
+              class="volumebtn relative py-0 px-1 font-serif italic text-2xl hover:text-bg hover:bg-fg"
+              type="button"
             >
-              <path
-                d="m24.213 12.943v7.5833m6-13.052v18.521m6-25.323v32.125m-34.235-21.335h6.4792l10.256-9.1368v29.819l-10.256-9.1371h-6.4789v-11.545z"
-                stroke="#000"
-                stroke-linejoin="bevel"
-                stroke-width="3"
-              />
-            </svg>
-          </button>
+              <svg
+                fill="none"
+                viewBox="0 0 38 34"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m24.213 12.943v7.5833m6-13.052v18.521m6-25.323v32.125m-34.235-21.335h6.4792l10.256-9.1368v29.819l-10.256-9.1371h-6.4789v-11.545z"
+                  stroke="currentColor"
+                  stroke-linejoin="bevel"
+                  stroke-width="2.5"
+                />
+              </svg>
+              <div
+                class="volumebtn-inner py-1 absolute left-0 right-0 h-[6rem] top-[100%] border-b-2 border-x-2 border-fg bg-bg"
+              >
+                <Slider
+                  min={0}
+                  bind:value={volume2}
+                  max={100}
+                  step={1}
+                  precision={1}
+                  vertical
+                  formatter={(v) => Math.round(v)}
+                />
+              </div>
+            </button>
+          {/if}
 
           <button
             class="playbtn font-serif italic text-2xl"
@@ -181,8 +210,8 @@
             {#if currentTrack.src !== track.src}
               Play
             {:else if currentTrack.src === track.src && isPlaying && (status === "canplay" || status === "canplaythrough" || status === "waiting")}
-              <!-- <span class="loader"></span> -->
-              <span class="loader2 absolute"></span>
+              <span class="loader"></span>
+              <!-- <span class="loader2 absolute"></span> -->
             {:else if currentTrack.src === track.src && isPlaying === true}
               Pause
             {:else if currentTrack.src === track.src && isPlaying === false}
@@ -220,8 +249,25 @@
   .should-sticky {
     @apply sticky top-0 z-50 bg-white  border-fg;
   }
+  .volumebtn {
+    @apply border-t-2 border-x-2 border-transparent transition;
+  }
+  .volumebtn-inner {
+    visibility: none;
+    opacity: 0;
+    @apply -mx-[2px] transition;
+  }
   .should-sticky .trackdetails {
     @apply border-transparent;
+  }
+  .volumebtn:focus-within,
+  .volumebtn:hover {
+    @apply border-fg bg-[var(--c-dark)] text-[var(--c-light)];
+  }
+  .volumebtn:focus-within .volumebtn-inner,
+  .volumebtn:hover .volumebtn-inner {
+    opacity: 1;
+    visibility: visible;
   }
 
   .loader {

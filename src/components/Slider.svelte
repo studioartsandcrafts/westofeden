@@ -108,7 +108,7 @@
     if (vertical) {
       interactionPosition = clientPosition - dimensions.top;
       interactionPercent = (interactionPosition / dimensions.height) * 100;
-      interactionValue = ((max - min) / 100) * interactionPercent + min;
+      interactionValue = 100 - ((max - min) / 100) * interactionPercent + min;
     } else {
       interactionPosition = clientPosition - dimensions.left;
       interactionPercent = (interactionPosition / dimensions.width) * 100;
@@ -258,7 +258,8 @@
     on:blur={sliderBlurHandle}
     on:focus={sliderFocusHandle}
     on:keydown={sliderKeydown}
-    style="{vertical ? 'top' : 'left'}: {percentageValue}%;"
+    style="{vertical ? 'top' : 'left'}:  
+    {vertical ? 100 - percentageValue : percentageValue}%;"
     aria-valuenow={percentageValue}
     aria-valuemin={min}
     aria-valuemax={max}
@@ -272,8 +273,8 @@
     bind:this={fill}
     class="fill"
     class:square={square === true}
-    style="{vertical ? 'top' : 'left'}: {fillStart(min)}%;
-      {vertical ? 'bottom' : 'right'}: {fillEnd(percentageValue)}%;"
+    style="{vertical ? 'bottom' : 'left'}: {fillStart(min)}%;
+      {vertical ? 'top' : 'right'}: {fillEnd(percentageValue)}%;"
   />
 </div>
 
@@ -297,9 +298,9 @@
 
   .slider.vertical {
     display: inline-block;
-    border-radius: 100px;
     width: var(--size);
-    min-height: 200px;
+    min-height: 35px;
+    height: 100%;
   }
 
   .slider .handle {
@@ -349,7 +350,7 @@
   }
 
   .slider .float {
-    display: block;
+    display: none;
     position: absolute;
     left: 50%;
     top: -1.2rem;
@@ -383,7 +384,6 @@
   }
 
   .slider.vertical .fill {
-    width: var(--size);
     height: auto;
   }
 

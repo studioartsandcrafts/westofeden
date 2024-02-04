@@ -6,7 +6,7 @@ interface Props {
   };
 }
 const colors = [
-"#1a4b16", "#406427", "#627b38", "#828f4a", "#a0a35c"];
+"#6ab581", "#8cc197", "#aacdac", "#c7d8c0", "#e2e3d5"];
 const { title, data } = Astro.props;
 ---
 <p class="mb-2">{title}</p>
@@ -20,6 +20,9 @@ const { title, data } = Astro.props;
 </div>
 
 <style lang="postcss">
+  .chartitem {
+    min-width: 2em;
+  }
     .chartitem:first-child {
         @apply border-l-2 border-fg;
     }

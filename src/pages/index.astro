@@ -3,17 +3,19 @@ import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 import { Image } from "astro:assets";
-import group1 from "../images/group1.jpg";
 import Link from "../components/Link.astro";
 import { YouTube } from "@astro-community/astro-embed-youtube";
 import Chart from "../components/Chart.astro";
 import Player from "../components/Player.svelte";
 
+import group1 from "../images/DSC04995-Edit.jpg";
+
 const collection = "epk";
 const allPosts = await getCollection(collection); // we ignore this for now
 
 const streamingLinks = {
-  Spotify: "https://open.spotify.com/artist/5UAITt0KoASPqmtWm1Tphl?si=saegrrT9Q8mnWcohWcjtvw",
+  Spotify:
+    "https://open.spotify.com/artist/5UAITt0KoASPqmtWm1Tphl?si=saegrrT9Q8mnWcohWcjtvw",
   Soundcloud: "https://soundcloud.com/westofeden-music",
   "Apple Music": "https://music.apple.com/us/artist/west-of-eden/1728708854",
 };
@@ -66,7 +68,7 @@ const ageRange = {
     <h1 class="title z-10 relative">
       <i>West of Eden</i>
     </h1>
-    <Image src={group1} alt="A bird." class="w-full -mt-6 mb-2" />
+    <Image src={group1} alt="A bird." class="w-full mb-2" />
     <h2 class="inline-flex w-full justify-between font-bold text-6xl">
       <b>Press</b><b>Kit</b>
     </h2>
@@ -77,8 +79,10 @@ const ageRange = {
   <section id="about" class="">
     <h2 class="subheading">About</h2>
     <p class="font-serif text-xl indent-12">
-      WEST OF EDEN is a music collective based in Seattle, Washington with a focus on RNB and Indie Pop music. 
-      Made up of vocalists, riensu, slone, jun.e, keanu., wil, and yoku, alongside in-house producers, videographers and graphic artists. 
+      WEST OF EDEN is a music collective based in Seattle, Washington with a
+      focus on RNB and Indie Pop music. Made up of vocalists, riensu, slone,
+      jun.e, keanu., wil, and yoku, alongside in-house producers, videographers
+      and graphic artists.
     </p>
 
     <div
@@ -106,8 +110,12 @@ const ageRange = {
       </div>
       <div>
         <h3 class="font-serif italic text-2xl">Contact</h3>
-        <a href="mailto:woecollective@gmail.com"><p>woecollective@gmail.com</p></a>
-        <a href="mailto:himynameisjun.3@gmail.com"><p>himynameisjun.3@gmail.com</p></a>
+        <a href="mailto:woecollective@gmail.com"
+          ><p>woecollective@gmail.com</p></a
+        >
+        <a href="mailto:himynameisjun.3@gmail.com"
+          ><p>himynameisjun.3@gmail.com</p></a
+        >
         <p class="invisible" aria-hidden>*</p>
         <p class="">
           <a class="link" href="/WOETechRider.pdf" target="_blank">Tech Rider</a
