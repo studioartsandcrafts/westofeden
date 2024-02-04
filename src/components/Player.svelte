@@ -1,6 +1,8 @@
 <script lang="ts">
   import Slider from "./Slider.svelte";
   import { slide } from "svelte/transition";
+  import { blurOnEscape } from "./svelteDirectives";
+  import { onMount } from "svelte";
 
   interface Track {
     artist: string;
@@ -38,7 +40,6 @@
   let duration;
   let currentTime = 0;
   let paused = true; // <- do i need this
-  let volume = 0.1;
 
   let slider;
 
@@ -97,18 +98,26 @@
 
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
-  let openVolume = false;
-  let volume2 = 10;
+
+  let volume = 0.8;
+  let volume2 = 80;
   $: volume = volume2 / 100; // lol this is sooo fucking jank
 
-  function handleKeyDown(event: KeyboardEvent) {
-    // if (openVolume && event.key === "Escape") {
-    //   openVolume = false;
-    // }
+  onMount(() => {
+    const isBrowser = typeof window !== "undefined";
+    if (!isBrowser || !("volume" in localStorage)) return;
+    const vol = localStorage.getItem("volume");
+    if (!vol) return;
+    volume2 = parseFloat(vol);
+  });
+
+  function saveVolume() {
+    const isBrowser = typeof window !== "undefined";
+    if (!isBrowser) return;
+    localStorage.setItem("volume", volume2.toString());
   }
 </script>
 
-<svelte:window on:keydown={handleKeyDown} />
 <!-- svelte-ignore a11y-media-has-caption -->
 <audio
   bind:this={audioPlayer}
@@ -167,6 +176,8 @@
             <button
               class="volumebtn relative py-0 px-1 font-serif italic text-2xl hover:text-bg hover:bg-fg"
               type="button"
+              use:blurOnEscape
+              on:focusout={saveVolume}
             >
               <svg
                 fill="none"
@@ -238,7 +249,7 @@
     @apply hover:text-bg hover:bg-fg;
   }
   .playbtn:disabled {
-    @apply opacity-85;
+    @apply opacity-85 pointer-events-none;
   }
   section {
     @apply px-4 max-w-xl mx-auto mb-2;
@@ -255,6 +266,7 @@
   .volumebtn-inner {
     visibility: none;
     opacity: 0;
+    pointer-events: none;
     @apply -mx-[2px] transition;
   }
   .should-sticky .trackdetails {
@@ -268,6 +280,7 @@
   .volumebtn:hover .volumebtn-inner {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
   }
 
   .loader {
@@ -290,7 +303,7 @@
     }
   }
   /* HTML: <div class="loader"></div> */
-  .loader2 {
+  /* .loader2 {
     width: 112px;
     height: 218px;
     border-radius: 8px;
@@ -440,5 +453,5 @@
         100px 110px,
         -100px 145px;
     }
-  }
+  } */
 </style>
