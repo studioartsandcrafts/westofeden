@@ -8,7 +8,11 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
 import Chart from "../components/Chart.astro";
 import Player from "../components/Player.svelte";
 
-import group1 from "../images/DSC04995-Edit.jpg";
+import i1 from "../images/image1.jpg";
+import i2 from "../images/image2.jpg";
+import i3 from "../images/image3.jpg";
+import i4 from "../images/image4.jpg";
+import i5 from "../images/image5.jpg";
 
 //const collection = "epk";
 // const allPosts = await getCollection(collection); // we ignore this for now
@@ -40,7 +44,7 @@ const ageRange = {
 };
 ---
 
-<Layout title="West of Eden | Press Kit">
+<Layout title="West of Eden">
   <section id="top">
     <div
       class="tableofcontent flex justify-between text-xl gap-2 mt-2 relative z-20"
@@ -69,7 +73,7 @@ const ageRange = {
     <h1 class="title z-10 relative">
       <i>West of Eden</i>
     </h1>
-    <Image src={group1} alt="A bird." class="w-full mb-2" />
+    <Image src={i1} alt="A bird." class="w-full mb-2" />
     <h2 class="inline-flex w-full justify-between font-bold text-6xl">
       <b>Press</b><b>Kit</b>
     </h2>
@@ -81,8 +85,8 @@ const ageRange = {
     <div id="contact" class="-top-[50%] absolute" aria-hidden></div>
     <h2 class="subheading">About</h2>
     <p class="font-serif text-xl indent-12">
-      WEST OF EDEN is a music collective based in Seattle, Washington with a
-      focus on RNB and Indie Pop music. Made up of vocalists, riensu, slone,
+      WEST OF EDEN is an independent music collective based in Seattle, Washington with a
+      focus on RNB and Indie Pop music. Comprised of vocalists, riensu, slone,
       jun.e, keanu., wil, and yoku, alongside in-house producers, videographers
       and graphic artists.
     </p>
@@ -149,6 +153,16 @@ const ageRange = {
   <section>
     <h2 class="subheading" id="mv">MV</h2>
     <YouTube id="gVbfboaCHF0" />
+  </section>
+  <section id="photos" class="">
+    <h2 class="subheading">Photos</h2>
+    <div class="grid grid-cols-3 gap-1">
+      <Image src={i1} alt="A bird." class="object-cover aspect-square hover:opacity-80 hover:transition-opacity" />
+      <Image src={i2} alt="A bird." class="object-cover aspect-square hover:opacity-80 hover:transition-opacity" />
+      <Image src={i3} alt="A bird." class="object-cover aspect-square hover:opacity-80 hover:transition-opacity" />
+      <Image src={i4} alt="A bird." class="object-cover aspect-square hover:opacity-80 hover:transition-opacity" />
+      <Image src={i5} alt="A bird." class="object-cover aspect-square hover:opacity-80 hover:transition-opacity" />
+    </div>
   </section>
 </Layout>
 
