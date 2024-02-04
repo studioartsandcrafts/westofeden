@@ -78,7 +78,7 @@
   $: currentTrack = tracklist[currentIndex >= 0 ? currentIndex : 0];
   function loadTrack(index: number) {
     currentIndex = index;
-
+    audioPlayer.src = tracklist[currentIndex >= 0 ? currentIndex : 0].src;
     audioPlayer.load();
   }
   function playPauseSong(index: number) {
@@ -154,7 +154,7 @@
     isPlaying = false;
     currentTime = 0;
   }}
-  src={currentTrack.src}
+  src={tracklist[currentIndex >= 0 ? currentIndex : 0].src}
 />
 
 <!--tracklist-->
