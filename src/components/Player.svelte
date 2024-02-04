@@ -12,26 +12,26 @@
     links?: { [key: string]: string };
   }
   const tracklist: Track[] = [
-    {
-      artist: "WEST OF EDEN, jun.e, slone",
-      title: "Butterfly",
-      src: "/butterfly_sclol.mp3",
-      links: {
-        soundcloud: "https://soundcloud.com/westofeden-music/butterfly",
-        spotify:
-          "https://open.spotify.com/track/2wqa7edQscmRTT46aoHCNS?si=7bf920dc96bc418c",
-      },
-    },
-    {
-      artist: "WEST OF EDEN, jun.e, riensu, keanu",
-      title: "Won't Let You Go",
-      src: "/wlyg_master.wav",
-      links: {
-        soundcloud: "https://soundcloud.com/westofeden-music/wont-let-you-go",
-        spotify:
-          "https://open.spotify.com/track/5xmcU7dotR2SeiYg43cMQX?si=76b63a7013b74b35",
-      },
-    },
+    // {
+    //   artist: "WEST OF EDEN, jun.e, slone",
+    //   title: "Butterfly",
+    //   src: "/butterfly_sclol.mp3",
+    //   links: {
+    //     soundcloud: "https://soundcloud.com/westofeden-music/butterfly",
+    //     spotify:
+    //       "https://open.spotify.com/track/2wqa7edQscmRTT46aoHCNS?si=7bf920dc96bc418c",
+    //   },
+    // },
+    // {
+    //   artist: "WEST OF EDEN, jun.e, riensu, keanu",
+    //   title: "Won't Let You Go",
+    //   src: "/wlyg_master.wav",
+    //   links: {
+    //     soundcloud: "https://soundcloud.com/westofeden-music/wont-let-you-go",
+    //     spotify:
+    //       "https://open.spotify.com/track/5xmcU7dotR2SeiYg43cMQX?si=76b63a7013b74b35",
+    //   },
+    // },
     {
       artist: "WEST OF EDEN, jun.e, slone",
       title: "AGAIN (demo)",

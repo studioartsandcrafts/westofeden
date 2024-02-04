@@ -2,14 +2,16 @@
 interface Props {
   href: string;
   class?: string;
+  newWindow?: boolean;
 }
 
-const { href, class: className } = Astro.props;
+const { href, class: className, newWindow = true } = Astro.props;
 
+const target = newWindow ? "_blank" : "_self";
 const link = href;
 ---
 
-<a href={link} target="_blank" rel="noopener noreferrer" class=`${className}`>
+<a href={link} target={target} rel="noopener noreferrer" class=`${className}`>
   <slot />
 </a>
 
