@@ -5,9 +5,10 @@ interface Props {
   src: string;
   alt: string;
   class: string;
+  lazyLoad?: boolean;
 }
 
-const { src, alt, class: className } = Astro.props;
+const { src, alt, class: className, lazyLoad = true } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/images/*.{jpeg,jpg,png,gif}"
 );
@@ -27,6 +28,7 @@ const sizes = `(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1
   widths={widths}
   sizes={sizes}
   class={className}
+  loading={lazyLoad ? "lazy" : "eager"}
   data-src={imageSrc.src}
   data-src-alt={alt}
   data-src-size={imageSrc.width + "," + imageSrc.height}

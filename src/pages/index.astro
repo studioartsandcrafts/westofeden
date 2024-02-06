@@ -38,13 +38,20 @@ const ageRange = {
   "35+": "10%",
 };
 const photoList = {
-  "/src/images/image1.jpg": "alt text",
-  "/src/images/image2.jpg": "alt text",
-  "/src/images/image3_1.jpg": "alt text",
-  "/src/images/image4.jpg": "alt text",
-  "/src/images/image5.jpg": "alt text",
-  "/src/images/image6.jpg": "alt text",
-  "/src/images/image7.jpg": "alt text",
+  "/src/images/image1.jpg":
+    "west of eden members posing in a group all wearing white shirts and jeans",
+  "/src/images/image2.jpg":
+    "candid shot of members sitting in living room looking up",
+  "/src/images/image3_1.jpg":
+    "two members discussing production of a song in front of a computer",
+  "/src/images/image4.jpg":
+    "four members looking up into a fisheye lens on the street in the dark",
+  "/src/images/image5.jpg":
+    "four members standing side by side like the weezer album cover",
+  "/src/images/image6.jpg":
+    "five members posing in front of a lake dressed for the cold",
+  "/src/images/image7.jpg":
+    "five members looking down at the camera in the night",
 };
 ---
 
@@ -77,7 +84,12 @@ const photoList = {
     <h1 class="title z-10 relative">
       <i>West of Eden</i>
     </h1>
-    <Image src={"/src/images/image1.jpg"} alt="A bird." class="w-full mb-2" />
+    <Image
+      src={"/src/images/image1.jpg"}
+      alt="west of eden members posing in a group all wearing white shirts and jeans"
+      class="w-full mb-2"
+      lazyLoad={false}
+    />
     <h2 class="inline-flex w-full justify-between font-bold text-6xl">
       <b>Press</b><b>Kit</b>
     </h2>
@@ -205,7 +217,12 @@ const photoList = {
           <p>26k monthly listeners</p>
         </header>
         <p class="achievement-item">
-          <img src="/images/untillwemeetagain.jpg" class="w-16 h-16" />
+          <img
+            src="/images/untillwemeetagain.jpg"
+            class="w-16 h-16"
+            role="presentation"
+            alt=""
+          />
           <strong>
             <q>
               <Link
@@ -223,6 +240,8 @@ const photoList = {
             src="/images/sillylittlelove.jpg"
             loading="lazy"
             class="w-16 h-16"
+            role="presentation"
+            alt=""
           />
           <strong>
             <q
@@ -254,6 +273,8 @@ const photoList = {
             src="/images/wishuweregone.jpg"
             loading="lazy"
             class="w-16 h-16"
+            role="presentation"
+            alt=""
           />
           <strong>
             <q
