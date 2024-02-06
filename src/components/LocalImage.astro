@@ -1,5 +1,5 @@
 ---
-import { Image as AstroImage } from "astro:assets";
+import { Image } from "astro:assets";
 
 interface Props {
   src: string;
@@ -8,7 +8,6 @@ interface Props {
 }
 
 const { src, alt, class: className } = Astro.props;
-
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/images/*.{jpeg,jpg,png,gif}"
 );
@@ -22,10 +21,13 @@ const widths = [540, 720, imageSrc.width];
 const sizes = `(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${imageSrc.width}px`;
 ---
 
-<AstroImage
+<Image
   src={imageSrc}
   alt={alt}
   widths={widths}
   sizes={sizes}
   class={className}
+  data-src={imageSrc.src}
+  data-src-alt={alt}
+  data-src-size={imageSrc.width + "," + imageSrc.height}
 />

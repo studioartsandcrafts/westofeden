@@ -1,0 +1,58 @@
+<dialog class="imageviewer">
+  <button
+    type="button"
+    class="p-2 text-center hover:text-bg hover:bg-fg border-b-2 border-fg w-full text-fg"
+    >close image</button
+  >
+
+  <slot />
+</dialog>
+<script>
+  // Find all buttons with the `alert` class on the page.
+  const buttons = document.querySelectorAll(
+    "button.imageviewer-btn"
+  ) as NodeListOf<HTMLButtonElement>;
+  const dialog = document.querySelector(
+    "dialog.imageviewer"
+  ) as HTMLDialogElement;
+  const img = dialog.querySelector(
+    "dialog.imageviewer img"
+  ) as HTMLImageElement;
+  // Handle clicks on each button.
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const imgSrc = button.querySelector("img") as HTMLImageElement;
+      const src = imgSrc.getAttribute("data-src");
+      const alt = imgSrc.getAttribute("data-src-alt");
+      const size = imgSrc.getAttribute("data-src-size");
+      console.log(src, alt);
+      if (!dialog || !src || !alt) return;
+      img.src = src ? src : "";
+      img.alt = alt ? alt : "";
+      if (size) {
+        img.width = parseInt(size.split(",")[0]);
+        img.height = parseInt(size.split(",")[1]);
+      }
+
+      dialog.showModal();
+    });
+  });
+  // handle dialog
+  const closeButton = document.querySelector("dialog button");
+  closeButton?.addEventListener("click", () => {
+    dialog.close();
+  });
+  dialog.addEventListener("close", () => {
+    img.removeAttribute("alt");
+    img.removeAttribute("width");
+    img.removeAttribute("height");
+
+    img.removeAttribute("src");
+  });
+</script>
+
+<style lang="postcss">
+     .imageviewer {
+    @apply bg-bg border-2 border-fg ;
+   }
+  </style>
