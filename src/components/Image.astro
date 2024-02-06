@@ -1,0 +1,31 @@
+---
+import { Image as AstroImage } from "astro:assets";
+
+interface Props {
+  src: string;
+  alt: string;
+  class: string;
+}
+
+const { src, alt, class: className } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/*.{jpeg,jpg,png,gif}"
+);
+if (!images[src])
+  throw new Error(
+    `"${src}" does not exist in glob: "src/images/*.{jpeg,jpg,png,gif}"`
+  );
+const imageSrc = (await images[src]()).default;
+
+const widths = [540, 720, imageSrc.width];
+const sizes = `(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${imageSrc.width}px`;
+---
+
+<AstroImage
+  src={imageSrc}
+  alt={alt}
+  widths={widths}
+  sizes={sizes}
+  class={className}
+/>
