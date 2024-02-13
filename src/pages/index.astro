@@ -168,7 +168,8 @@ const photoList = {
   </section>
   <section>
     <h2 class="subheading" id="mv">MV</h2>
-    <YouTube id="gVbfboaCHF0" />
+    <YouTube id="gVbfboaCHF0" class="mb-3" />
+    <YouTube id="BEIKnLqyA1Y" />
   </section>
   <section>
     <h2 class="subheading mb-3">Recent Achievements</h2>
@@ -181,6 +182,14 @@ const photoList = {
             >
           </p>
         </header>
+        <video
+          preload="metadata"
+          poster="/WOEshaun2023highlight.jpg"
+          controls
+          class="w-full"
+        >
+          <source src="/WOEshaun2023highlight.mp4" type="video/mp4" />
+        </video>
         <div class="achievement-item">
           <strong>
             <q>SHAUN On the Road North America Tour 2023</q> Seattle Opening Act</strong
@@ -247,7 +256,7 @@ const photoList = {
       <article class="achievement">
         <header>
           <p>slone</p>
-          <p>40k monthly listeners</p>
+          <p>50k monthly listeners</p>
         </header>
         <div class="achievement-item image">
           <img
@@ -280,30 +289,30 @@ const photoList = {
       </article>
     </div>
   </section>
-  <section class="relative">
-    <div id="photos" class="-top-[40%] absolute" aria-hidden></div>
-
-    <h2 class="subheading">Photos</h2>
-    <div class="grid grid-cols-3 gap-1">
-      {
-        Object.entries(photoList).map(([src, alt]) => (
-          <button
-            type="button"
-            class="imageviewer-btn hover:opacity-80 active:opacity-70 transition-opacity"
-          >
-            <Image src={src} alt={alt} class="object-cover aspect-square " />
-          </button>
-        ))
-      }
-      <DialogImage>
-        <img class="object-contain h-full max-h-[90svh] max-w-[90svw]" />
-      </DialogImage>
-    </div>
-    <p class="text-center mt-2 font-serif italic">
-      Contact us for full media kit
-    </p>
-  </section>
 </Layout>
+<section class="relative">
+  <div id="photos" class="-top-[40%] absolute" aria-hidden></div>
+
+  <h2 class="subheading">Photos</h2>
+  <div class="grid grid-cols-3 gap-1">
+    {
+      Object.entries(photoList).map(([src, alt]) => (
+        <button
+          type="button"
+          class="imageviewer-btn hover:opacity-80 active:opacity-70 transition-opacity"
+        >
+          <Image src={src} alt={alt} class="object-cover aspect-square " />
+        </button>
+      ))
+    }
+    <DialogImage>
+      <img class="object-contain h-full max-h-[90svh] max-w-[90svw]" />
+    </DialogImage>
+  </div>
+  <p class="text-center mt-2 font-serif italic">
+    Contact us for full media kit
+  </p>
+</section>
 
 <style lang="postcss">
     section {
@@ -320,7 +329,7 @@ const photoList = {
         @apply underline hover:text-bg hover:bg-fg w-fit;
     }
     .subheading {
-        @apply font-bold text-4xl text-center mt-8;
+        @apply font-bold text-4xl text-center mt-8 mb-3;
     }
    
    :global(img) {
