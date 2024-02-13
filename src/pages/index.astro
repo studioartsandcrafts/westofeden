@@ -289,30 +289,30 @@ const photoList = {
       </article>
     </div>
   </section>
-</Layout>
-<section class="relative">
-  <div id="photos" class="-top-[40%] absolute" aria-hidden></div>
+  <section class="relative">
+    <div id="photos" class="-top-[40%] absolute" aria-hidden></div>
 
-  <h2 class="subheading">Photos</h2>
-  <div class="grid grid-cols-3 gap-1">
-    {
-      Object.entries(photoList).map(([src, alt]) => (
-        <button
-          type="button"
-          class="imageviewer-btn hover:opacity-80 active:opacity-70 transition-opacity"
-        >
-          <Image src={src} alt={alt} class="object-cover aspect-square " />
-        </button>
-      ))
-    }
-    <DialogImage>
-      <img class="object-contain h-full max-h-[90svh] max-w-[90svw]" />
-    </DialogImage>
-  </div>
-  <p class="text-center mt-2 font-serif italic">
-    Contact us for full media kit
-  </p>
-</section>
+    <h2 class="subheading">Photos</h2>
+    <div class="grid grid-cols-3 gap-1">
+      {
+        Object.entries(photoList).map(([src, alt]) => (
+          <button
+            type="button"
+            class="imageviewer-btn hover:opacity-80 active:opacity-70 transition-opacity"
+          >
+            <Image src={src} alt={alt} class="object-cover aspect-square " />
+          </button>
+        ))
+      }
+      <DialogImage>
+        <img class="object-contain h-full max-h-[90svh] max-w-[90svw]" />
+      </DialogImage>
+    </div>
+    <p class="text-center mt-2 font-serif italic">
+      Contact us for full media kit
+    </p>
+  </section>
+</Layout>
 
 <style lang="postcss">
     section {
