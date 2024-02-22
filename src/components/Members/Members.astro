@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-
+import type { CollectionEntry } from "astro:content";
 import svgArtist from "./artist.svg?raw";
 import svgProducer from "./producer.svg?raw";
 import svgVisual from "./visual.svg?raw";
@@ -11,7 +11,10 @@ const memberEntries = (
   })
 ).sort(sortByType);
 
-function sortByType(a, b) {
+function sortByType(
+  a: CollectionEntry<"members">,
+  b: CollectionEntry<"members">
+) {
   if (a.data.type[0] < b.data.type[0]) return -1;
   if (a.data.type[0] > b.data.type[0]) return 1;
   return 0;
