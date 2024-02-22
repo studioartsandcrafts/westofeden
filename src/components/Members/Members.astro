@@ -30,7 +30,7 @@ const memberTypeIcon = {
 };
 ---
 
-<ul class="flex gap-2 justify-center mb-3 mt-3" role="toolbar">
+<ul class="flex gap-2 md:justify-center mb-3 mt-3" role="toolbar">
   <button class="px-3 active" data-member-type={"all"}> all</button>
   {
     Object.entries(memberTypeIcon).map(([type, icon]) => (
@@ -43,7 +43,7 @@ const memberTypeIcon = {
     ))
   }
 </ul>
-<ul class="flex flex-wrap gap-2 justify-center">
+<ul class="flex flex-wrap gap-2 md:justify-center">
   {
     memberEntries.map((member) => (
       <li>
