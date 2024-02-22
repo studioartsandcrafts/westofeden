@@ -149,42 +149,47 @@ const tracklist = [
     >
       <div>
         <h3 class="font-serif italic text-2xl">Streaming</h3>
-        {
-          Object.entries(streamingLinks).map(([key, href]) => (
-            <p class="link">
-              <Link href={href}>{key}</Link>
-            </p>
-          ))
-        }
+        <ul>
+          {
+            Object.entries(streamingLinks).map(([key, href]) => (
+              <li class="link">
+                <Link href={href}>{key}</Link>
+              </li>
+            ))
+          }
+        </ul>
       </div>
       <div>
         <h3 class="font-serif italic text-2xl">Socials</h3>
-        {
-          Object.entries(socialLinks).map(([key, href]) => (
-            <p class="link">
-              <Link href={href}>{key}</Link>
-            </p>
-          ))
-        }
+        <ul>
+          {
+            Object.entries(socialLinks).map(([key, href]) => (
+              <li class="link">
+                <Link href={href}>{key}</Link>
+              </li>
+            ))
+          }
+        </ul>
       </div>
       <div>
         <h3 class="font-serif italic text-2xl">Contact</h3>
-        <p>
-          <a href="mailto:woecollective@gmail.com" class="link">
-            woecollective@gmail.com
-          </a>
-        </p>
+        <ul>
+          <li class="link">
+            <Link href="mailto:woecollective@gmail.com" newWindow={false}>
+              woecollective@gmail.com
+            </Link>
+          </li>
 
-        <p>
-          <a href="mailto:himynameisjun.3@gmail.com" class="link">
-            himynameisjun.3@gmail.com
-          </a>
-        </p>
-        <p class="invisible" aria-hidden>*</p>
-        <p class="">
-          <a class="link" href="/WOETechRider.pdf" target="_blank">Tech Rider</a
-          >
-        </p>
+          <li class="link">
+            <Link href="mailto:himynameisjun.3@gmail.com" newWindow={false}>
+              himynameisjun.3@gmail.com
+            </Link>
+          </li>
+          <li class="invisible" aria-hidden>*</li>
+          <li class="link">
+            <Link href="/WOETechRider.pdf">Tech Rider</Link>
+          </li>
+        </ul>
       </div>
     </div>
   </section>

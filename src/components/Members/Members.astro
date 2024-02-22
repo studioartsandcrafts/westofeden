@@ -27,34 +27,41 @@ const memberTypeIcon = {
 };
 ---
 
-<div class="flex gap-2 justify-center mb-3 mt-3">
+<ul class="flex gap-2 justify-center mb-3 mt-3" role="toolbar">
   <button class="px-3 active" data-member-type={"all"}> all</button>
   {
     Object.entries(memberTypeIcon).map(([type, icon]) => (
-      <button class="pl-2 pr-3 " data-member-type={type}>
-        <Fragment set:html={icon} />
-        {type}
-      </button>
+      <li>
+        <button class="pl-2 pr-3 " data-member-type={type} role="button">
+          <Fragment set:html={icon} aria-hidden />
+          {type}
+        </button>
+      </li>
     ))
   }
-</div>
-<div class="flex flex-wrap gap-2 justify-center">
+</ul>
+<ul class="flex flex-wrap gap-2 justify-center">
   {
     memberEntries.map((member) => (
-      <a
-        href={getFirstLink(member.data.links)}
-        target="_blank"
-        referrerpolicy="no-referrer"
-        class="hover:underline decoration-2 transition"
-        data-member-type={member.data.type[0]}
-      >
-        <Fragment set:html={memberTypeIcon[member.data.type[0]]} />
+      <li>
+        <a
+          href={getFirstLink(member.data.links)}
+          target="_blank"
+          referrerpolicy="no-referrer"
+          class="hover:underline decoration-2 transition"
+          data-member-type={member.data.type[0]}
+        >
+          <Fragment
+            set:html={memberTypeIcon[member.data.type[0]]}
+            aria-hidden
+          />
 
-        <p>{member.data.name}</p>
-      </a>
+          <p>{member.data.name}</p>
+        </a>
+      </li>
     ))
   }
-</div>
+</ul>
 <script>
   const memberTypeColors = {
     all: "",

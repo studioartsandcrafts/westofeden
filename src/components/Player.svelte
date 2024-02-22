@@ -161,6 +161,7 @@
             <button
               class="volumebtn relative py-0 px-1 font-serif italic text-2xl"
               type="button"
+              aria-label="volume"
               use:blurOnEscape
               on:focusout={saveVolume}
             >
