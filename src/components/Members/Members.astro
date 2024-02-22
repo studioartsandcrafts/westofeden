@@ -1,0 +1,111 @@
+---
+import { getCollection } from "astro:content";
+
+import svgArtist from "./artist.svg?raw";
+import svgProducer from "./producer.svg?raw";
+import svgVisual from "./visual.svg?raw";
+
+const memberEntries = (
+  await getCollection("members", ({ data }) => {
+    return data.archive !== true;
+  })
+).sort(sortByType);
+
+function sortByType(a, b) {
+  if (a.data.type[0] < b.data.type[0]) return -1;
+  if (a.data.type[0] > b.data.type[0]) return 1;
+  return 0;
+}
+function getFirstLink(links: { [key: string]: string }) {
+  if (Object.entries(links).length > 0) return Object.entries(links)[0][1];
+}
+
+const memberTypeIcon = {
+  artist: svgArtist,
+  producer: svgProducer,
+  visual: svgVisual,
+};
+---
+
+<div class="flex gap-2 justify-center mb-3 mt-3">
+  <button class="px-3 active" data-member-type={"all"}> all</button>
+  {
+    Object.entries(memberTypeIcon).map(([type, icon]) => (
+      <button class="pl-2 pr-3 " data-member-type={type}>
+        <Fragment set:html={icon} />
+        {type}
+      </button>
+    ))
+  }
+</div>
+<div class="flex flex-wrap gap-2 justify-center">
+  {
+    memberEntries.map((member) => (
+      <a
+        href={getFirstLink(member.data.links)}
+        target="_blank"
+        referrerpolicy="no-referrer"
+        class="hover:underline decoration-2 transition"
+        data-member-type={member.data.type[0]}
+      >
+        <Fragment set:html={memberTypeIcon[member.data.type[0]]} />
+
+        <p>{member.data.name}</p>
+      </a>
+    ))
+  }
+</div>
+<script>
+  const memberTypeColors = {
+    all: "",
+    artist: "bg-yellow-300",
+    producer: "bg-orange-300",
+    visual: "bg-pink-300",
+  };
+  type memberTypes = keyof typeof memberTypeColors;
+  const allMembers = document.querySelectorAll("a[data-member-type]");
+  const memberTypeButtons = document.querySelectorAll(
+    "button[data-member-type]"
+  );
+
+  memberTypeButtons.forEach((button) => {
+    const btnType = button.getAttribute("data-member-type") as memberTypes;
+    if (!btnType) return;
+    button.addEventListener("click", () => {
+      // set btn active
+      memberTypeButtons.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+      button.classList.add("active");
+
+      // set colors on member
+      allMembers.forEach((member) => {
+        const memberType = member.getAttribute(
+          "data-member-type"
+        ) as memberTypes;
+        if (!memberType) return;
+
+        if (btnType === memberType) {
+          member.classList.add(memberTypeColors[memberType]);
+        } else {
+          member.classList.remove(memberTypeColors[memberType]);
+        }
+      });
+    });
+  });
+</script>
+<style lang="postcss">
+  button {
+    @apply flex items-center gap-1;
+    @apply py-1 underline rounded-full text-sm md:text-base;
+    @apply hover:bg-stone-200;
+  }
+  button.active {
+    @apply bg-stone-300;
+  }
+  a {
+      @apply block border border-2 rounded-full border-fg pl-2 md:pl-3 pr-3 md:pr-4 py-0 md:py-1;
+      @apply flex gap-2 items-center;
+      @apply text-lg md:text-xl;
+  }
+</style>

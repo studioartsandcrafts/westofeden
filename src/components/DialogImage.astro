@@ -4,8 +4,10 @@
     class="p-2 text-center hover:text-bg hover:bg-fg border-b-2 border-fg w-full text-fg"
     >close image</button
   >
-
-  <slot />
+  <div class="img-wrapper-dialog">
+    <div class="loader"></div>
+    <slot />
+  </div>
 </dialog>
 <script>
   // Find all buttons with the `alert` class on the page.
@@ -33,7 +35,10 @@
         img.width = parseInt(size.split(",")[0]);
         img.height = parseInt(size.split(",")[1]);
       }
-
+      img.addEventListener("load", () => {
+        const loader = dialog.querySelector(".img-wrapper-dialog .loader");
+        loader?.classList.add("hidden");
+      });
       dialog.showModal();
     });
   });
@@ -48,6 +53,8 @@
     img.removeAttribute("height");
 
     img.removeAttribute("src");
+    const loader = dialog.querySelector(".img-wrapper-dialog .loader");
+    loader?.classList.remove("hidden");
   });
 </script>
 
@@ -55,4 +62,28 @@
      .imageviewer {
     @apply bg-bg border-2 border-fg ;
    }
+   .loader {
+    transform: translate(-50%, -50%);
+    position: absolute;
+  top: 50%;
+  left: 50%;
+    width: 3em;
+    height: 3em;
+    border: 5px solid var(--c-fg);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotation 2s linear infinite;
+  }
+  .loader > .hidden {
+    display: none;
+  }
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
   </style>

@@ -42,4 +42,15 @@ const epk = defineCollection({
     }),
 });
 
-export const collections = { epk: epk };
+const members = defineCollection({
+  type: "data",
+  schema: ({ image }) =>
+    z.object({
+      archive: z.boolean().default(false),
+      name: z.string(),
+      links: z.record(z.string(), z.string()),
+      type: z.array(z.enum(["artist", "producer", "visual"])),
+    }),
+});
+
+export const collections = { epk: epk, members };

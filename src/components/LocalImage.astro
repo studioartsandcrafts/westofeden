@@ -22,14 +22,88 @@ const widths = [540, 720, imageSrc.width];
 const sizes = `(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${imageSrc.width}px`;
 ---
 
-<Image
-  src={imageSrc}
-  alt={alt}
-  widths={widths}
-  sizes={sizes}
-  class={className}
-  loading={lazyLoad ? "lazy" : "eager"}
-  data-src={imageSrc.src}
-  data-src-alt={alt}
-  data-src-size={imageSrc.width + "," + imageSrc.height}
-/>
+<div class=`img-wrapper ` data-local-img>
+  <Image
+    src={imageSrc}
+    alt={alt}
+    widths={widths}
+    sizes={sizes}
+    class={className}
+    loading={lazyLoad ? "lazy" : "eager"}
+    data-src={imageSrc.src}
+    data-src-alt={alt}
+    data-src-size={imageSrc.width + "," + imageSrc.height}
+  />
+</div>
+<script>
+  // document.addEventListener("DOMContentLoaded", preloaderUntilImageLoad);
+
+  // function preloaderUntilImageLoad() {
+  //   const images = document.querySelectorAll("[data-local-img]");
+  //   images.forEach((img) => {
+  //     function onImageLoad() {
+  //       img.classList.remove("img-preloader");
+  //     }
+  //     const innerimg = img.querySelector("img");
+  //     console.log(innerimg);
+  //     if (!innerimg) return;
+  //     innerimg.addEventListener("load", onImageLoad);
+  //     innerimg.addEventListener("error", onImageLoad);
+
+  //     img.classList.add("img-preloader");
+  //     img.classList.add("transition");
+  //   });
+  // }
+</script>
+<style lang="postcss" is:global>
+  .img-wrapper {
+    @apply relative;
+  }
+  .img-wrapper::before {
+    content: '';
+    @apply absolute inset-0 bg-fg  pointer-events-none;
+    @apply opacity-0 transition;
+  }
+  .img-preloader::before {
+    content: '';
+    @apply opacity-100 bg-fg;
+
+  }
+  .localimg-loader {
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  top: 50%;
+  left: 50%;
+    width: 1em;
+    height: 1em;
+    border: 2px solid var(--c-bg);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    z-index: 4;
+    animation: rotation 2s linear infinite;
+  }
+ 
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .img-preloader .localimg-loader {
+    @apply opacity-100;
+  }
+</style>
+
+<noscript>
+  <style is:global>
+    .img-preloader::before {
+      opacity: 0;
+    }
+  </style>
+</noscript>
