@@ -4,6 +4,7 @@ import type { CollectionEntry } from "astro:content";
 import svgArtist from "./artist.svg?raw";
 import svgProducer from "./producer.svg?raw";
 import svgVisual from "./visual.svg?raw";
+import svgMarketing from "./marketing.svg?raw";
 
 const memberEntries = (
   await getCollection("members", ({ data }) => {
@@ -27,6 +28,7 @@ const memberTypeIcon = {
   artist: svgArtist,
   producer: svgProducer,
   visual: svgVisual,
+  marketing: svgMarketing,
 };
 ---
 
@@ -71,6 +73,7 @@ const memberTypeIcon = {
     artist: "bg-yellow-300",
     producer: "bg-orange-300",
     visual: "bg-pink-300",
+    marketing: "bg-blue-300",
   };
   type memberTypes = keyof typeof memberTypeColors;
   const allMembers = document.querySelectorAll("a[data-member-type]");
