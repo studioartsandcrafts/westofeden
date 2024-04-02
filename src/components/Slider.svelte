@@ -40,7 +40,7 @@
       return parseFloat(percent.toFixed(precision));
     }
   };
-
+  // i just realized but wtf is this reactive function lmfao
   $: clampValue = function (value) {
     return value <= min ? min : value >= max ? max : value;
   };
@@ -289,6 +289,7 @@
     margin: 0;
     padding: 0;
     height: var(--size);
+    cursor: pointer;
   }
 
   .slider,

@@ -91,9 +91,7 @@ const tracklist = [
 
 <Layout title="West of Eden">
   <section id="top">
-    <div
-      class="tableofcontent flex justify-between text-xl gap-2 mt-2 relative z-20"
-    >
+    <nav class="tableofcontent text-xl gap-2 mt-2">
       <p class="link">
         <Link href={"#photos"} newWindow={false}>Photos</Link>
       </p>
@@ -114,7 +112,7 @@ const tracklist = [
       <p class="link">
         <Link href={"#contact"} newWindow={false}>Contact</Link>
       </p>
-    </div>
+    </nav>
     <h1 class="title z-10 relative">
       <i>West of Eden</i>
     </h1>
@@ -124,7 +122,9 @@ const tracklist = [
       class="w-full mb-2"
       lazyLoad={false}
     />
-    <h2 class="inline-flex w-full justify-between font-bold text-6xl">
+    <h2
+      class="inline-flex w-full justify-between font-bold text-5xl md:text-6xl"
+    >
       <b>Press</b><b>Kit</b>
     </h2>
   </section>
@@ -367,6 +367,9 @@ const tracklist = [
     .title {
         @apply text-[30vmin] md:text-[11rem] font-serif tracking-tight leading-[0.85] text-center;
         @apply -ml-[0.2em];
+    }
+    .tableofcontent {
+      @apply flex justify-between relative z-20;
     }
     .tableofcontent .link:nth-child(2n) {
         @apply justify-self-end;
