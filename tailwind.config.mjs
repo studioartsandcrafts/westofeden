@@ -4,7 +4,7 @@ export default {
 	theme: {
 		fontFamily: {
 			'sans': ['"Archivo Narrow"', 'Arial Narrow', 'Arial', 'sans-serif'],
-			'serif': ['"Charter"', 'Georgia', 'serif'],
+			'serif': ['"XCharter"', 'Georgia', 'serif'],
 
 		},
 		extend: {
