@@ -32,7 +32,10 @@ const memberTypeIcon = {
 };
 ---
 
-<ul class="flex gap-2 md:justify-center mb-3 mt-3" role="toolbar">
+<ul
+  class="flex gap-x-1 md:gap-x-2 md:justify-center mb-3 mt-3 flex-wrap"
+  role="toolbar"
+>
   <button class="px-3 active" data-member-type={"all"}> all</button>
   {
     Object.entries(memberTypeIcon).map(([type, icon]) => (
