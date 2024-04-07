@@ -152,8 +152,8 @@
     {/if}
     <div class="trackdetails">
       <div class="">
-        <h2 class="font-serif italic text-3xl">{track.title}</h2>
-        <p>{track.artist}</p>
+        <h2 class="font-serif italic text-2xl md:text-3xl">{track.title}</h2>
+        <p class="text-sm md:text-base">{track.artist}</p>
       </div>
       <div class="flex flex-col items-end">
         <div class="flex gap-2">
