@@ -1,0 +1,78 @@
+---
+import Link from "./Link.astro";
+
+interface Props {
+  items?: {
+    title: string;
+    subtitle?: string;
+    desc?: string;
+    imgsrc?: string;
+    link?: string;
+  }[];
+}
+const { items } = Astro.props;
+---
+
+<article class="achievement">
+  <header>
+    <slot name="header" />
+  </header>
+  <slot />
+  {
+    items &&
+      items.map((item) => (
+        <div class={"achievement-item " + (!!item.imgsrc ? "image" : "")}>
+          {item.imgsrc && (
+            <img
+              src={item.imgsrc}
+              class="w-16 h-16"
+              role="presentation"
+              alt={item.title}
+            />
+          )}
+
+          <div>
+            <strong>
+              {item.link ? (
+                <q>
+                  <Link href={item.link} class="link">
+                    {item.title}
+                  </Link>
+                </q>
+              ) : (
+                <q>{item.title}</q>
+              )}
+            </strong>
+            <p class="aside">
+              {item.subtitle}
+
+              {!!item.subtitle && <span class="px-1">•</span>}
+
+              {item.desc}
+            </p>
+          </div>
+        </div>
+      ))
+  }
+</article>
+
+<style lang="postcss">
+    .achievement {
+      @apply py-3 flex flex-col gap-3;
+   }
+   .achievement header {
+    @apply flex justify-between text-2xl md:text-3xl;
+   }
+   .achievement-item.image {
+    @apply flex gap-2;
+   }
+   .achievement-item strong {
+     @apply font-serif text-xl md:text-2xl font-normal ;
+   }
+   .achievement-item .aside {
+    @apply text-sm md:text-base whitespace-nowrap ml-2 md:ml-3;
+   }
+   q {
+      @apply italic;
+    }
+  </style>
