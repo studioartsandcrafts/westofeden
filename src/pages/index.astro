@@ -9,6 +9,7 @@ import Chart from "../components/Chart.astro";
 import Player from "../components/Player.svelte";
 import DialogImage from "../components/DialogImage.astro";
 import Members from "../components/Members/Members.astro";
+import Achievement from "../components/Achievement.astro";
 
 //const collection = "epk";
 // const allPosts = await getCollection(collection); // we ignore this for now
@@ -223,14 +224,46 @@ const tracklist = [
     <h2 class="subheading">Recent Achievements</h2>
     <p class="text-center mb-3">(Streaming statistics from Spotify only)</p>
     <div class="divide-y-2 divide-fg">
-      <article class="achievement">
-        <header>
+      <Achievement
+        items={[
+          {
+            title: "SHAUN On the Road North America Tour 2023",
+            subtitle: "Seattle Opening Act",
+            desc: "(April 2023)",
+          },
+
+          {
+            title: "riensu & friends",
+            subtitle: "Headlining Show",
+            desc: "(March 2024)",
+          },
+          {
+            title: "Saint Martin's University (SMU) Spring Fest",
+            subtitle: "Main Act",
+            desc: "(April 2024)",
+          },
+          {
+            title: "butterfly",
+            desc: "41k streams",
+            imgsrc: "/images/butterfly.jpg",
+            link: "https://open.spotify.com/track/2wqa7edQscmRTT46aoHCNS?si=67126e7797684598",
+          },
+          {
+            title: "CONTACT",
+            desc: "27k streams",
+            imgsrc: "/images/contact.jpg",
+            link: "https://open.spotify.com/track/4ERvaHb0qu8mcGbl1qSsOQ?si=089842f8511342e0",
+          },
+        ]}
+      >
+        <Fragment slot="header">
           <p class="leading-none">
             WEST OF EDEN <span class="text-base whitespace-nowrap"
               >(formerly “ways of expression”)</span
             >
           </p>
-        </header>
+          <p class="leading-none text-right">8k monthly listeners</p>
+        </Fragment>
         <video
           preload="metadata"
           poster="/WOEshaun2023highlight.jpg"
@@ -239,199 +272,80 @@ const tracklist = [
         >
           <source src="/WOEshaun2023highlight.mp4" type="video/mp4" />
         </video>
-        <div class="achievement-item">
-          <strong>
-            <q>SHAUN On the Road North America Tour 2023</q> Seattle Opening Act</strong
-          >
-          <p class="aside">(April 2023)</p>
-        </div>
-        <div class="achievement-item">
-          <strong>
-            <q>riensu & friends</q> Headlining Show</strong
-          >
-          <p class="aside">(March 2024)</p>
-        </div>
-        <div class="achievement-item">
-          <strong>
-            <q>Saint Martin's University (SMU) Spring Fest</q> Main Act</strong
-          >
-          <p class="aside">(April 2024)</p>
-        </div>
-      </article>
-      <article class="achievement">
-        <header>
+      </Achievement>
+
+      <Achievement
+        items={[
+          {
+            title: "until we meet again",
+            subtitle: "New Music Friday Spotify Editorial",
+            desc: "(December 2023)",
+            imgsrc: "/images/untillwemeetagain.jpg",
+            link: "https://open.spotify.com/track/72B7YxcrXMAWqm0CH1qncS",
+          },
+
+          {
+            title: "silly little love",
+            subtitle: "",
+            desc: "411k streams",
+            imgsrc: "/images/sillylittlelove.jpg",
+            link: "https://open.spotify.com/track/0N7DX9Cc2kyjoMq3s05q12",
+          },
+          {
+            title: "Jimmy Brown Like the First Time North America Tour 2023",
+            subtitle: "Seattle Opening Act",
+            desc: "(November 2023)",
+          },
+        ]}
+      >
+        <Fragment slot="header">
           <p>riensu</p>
           <p>26k monthly listeners</p>
-        </header>
-        <div class="achievement-item image">
-          <img
-            src="/images/untillwemeetagain.jpg"
-            class="w-16 h-16"
-            role="presentation"
-            alt=""
-          />
-          <div>
-            <strong>
-              <q>
-                <Link
-                  href="https://open.spotify.com/track/72B7YxcrXMAWqm0CH1qncS"
-                  class="link"
-                >
-                  until we meet again
-                </Link>
-              </q> New Music Friday Spotify Editorial
-            </strong>
-            <p class="aside">(December 2023)</p>
-          </div>
-        </div>
-        <div class="achievement-item image">
-          <img
-            src="/images/sillylittlelove.jpg"
-            loading="lazy"
-            class="w-16 h-16"
-            role="presentation"
-            alt=""
-          />
-          <div>
-            <strong>
-              <q
-                ><Link
-                  href="https://open.spotify.com/track/0N7DX9Cc2kyjoMq3s05q12"
-                  class="link"
-                >
-                  silly little love
-                </Link>
-              </q>
-            </strong>
-            <p class="aside">411k streams</p>
-          </div>
-        </div>
-        <div class="achievement-item">
-          <strong>
-            <q>Jimmy Brown Like the First Time North America Tour 2023</q>
-            Seattle Opening Act
-          </strong>
-          <p class="aside">(November 2023)</p>
-        </div>
-      </article>
-      <article class="achievement">
-        <header>
+        </Fragment>
+      </Achievement>
+      <Achievement
+        items={[
+          {
+            title: "wish u were gone",
+            desc: "1M streams",
+            imgsrc: "/images/wishuweregone.jpg",
+            link: "https://open.spotify.com/track/1G4GFMIOxCvPJusmWWcWrz?si=decaee4bae1f463c",
+          },
+        ]}
+      >
+        <Fragment slot="header">
           <p>slone</p>
           <p>70k monthly listeners</p>
-        </header>
-        <div class="achievement-item image">
-          <img
-            src="/images/wishuweregone.jpg"
-            loading="lazy"
-            class="w-16 h-16"
-            role="presentation"
-            alt=""
-          />
-          <div>
-            <strong>
-              <q
-                ><Link
-                  href="https://open.spotify.com/track/1G4GFMIOxCvPJusmWWcWrz?si=decaee4bae1f463c"
-                  class="link"
-                >
-                  wish u were gone
-                </Link>
-              </q>
-            </strong>
-            <p class="aside">1M streams</p>
-          </div>
-        </div>
-      </article>
-      <article class="achievement">
-        <header>
-          <p class="text-3xl">keanu.</p>
+        </Fragment>
+      </Achievement>
+      <Achievement
+        items={[
+          {
+            title: "ENDLESSLY",
+            desc: "24k streams",
+            imgsrc: "/images/endlessly.jpg",
+            link: "https://open.spotify.com/track/27DMbtlp5VKP1AnvwkoveS?si=549d958455fe4405",
+          },
+        ]}
+      >
+        <Fragment slot="header">
+          <p>keanu.</p>
           <p>12k monthly listeners</p>
-        </header>
-        <div class="achievement-item image">
-          <img
-            src="/images/endlessly.jpg"
-            loading="lazy"
-            class="w-16 h-16"
-            role="presentation"
-            alt=""
-          />
-          <div>
-            <strong>
-              <q
-                ><Link
-                  href="https://open.spotify.com/track/27DMbtlp5VKP1AnvwkoveS?si=549d958455fe4405"
-                  class="link"
-                >
-                  ENDLESSLY
-                </Link>
-              </q>
-            </strong>
-            <p class="aside">24k streams</p>
-          </div>
-        </div>
-      </article>
-      <article class="achievement">
-        <header>
-          <p class="text-3xl">jun.e</p>
+        </Fragment>
+      </Achievement>
+      <Achievement>
+        <Fragment slot="header">
+          <p>jun.e</p>
           <p>6k monthly listeners</p>
-        </header>
-      </article>
-      <article class="achievement">
-        <header>
-          <p class="text-3xl">yoku</p>
+        </Fragment>
+      </Achievement>
+
+      <Achievement>
+        <Fragment slot="header">
+          <p>yoku</p>
           <p>3k monthly listeners</p>
-        </header>
-      </article>
-      <article class="achievement">
-        <header>
-          <p class="text-3xl">WEST OF EDEN</p>
-          <p>8k monthly listeners</p>
-        </header>
-        <div class="achievement-item image">
-          <img
-            src="/images/butterfly.jpg"
-            loading="lazy"
-            class="w-16 h-16"
-            role="presentation"
-            alt=""
-          />
-          <div>
-            <strong>
-              <q
-                ><Link
-                  href="https://open.spotify.com/track/2wqa7edQscmRTT46aoHCNS?si=67126e7797684598"
-                  class="link"
-                >
-                  butterfly
-                </Link>
-              </q>
-            </strong>
-            <p class="aside">41k streams</p>
-          </div>
-        </div>
-        <div class="achievement-item image">
-          <img
-            src="/images/contact.jpg"
-            loading="lazy"
-            class="w-16 h-16"
-            role="presentation"
-            alt=""
-          />
-          <div>
-            <strong>
-              <q
-                ><Link
-                  href="https://open.spotify.com/track/4ERvaHb0qu8mcGbl1qSsOQ?si=089842f8511342e0"
-                  class="link"
-                >
-                  CONTACT
-                </Link>
-              </q>
-            </strong>
-            <p class="aside">27k streams</p>
-          </div>
-        </div>
-      </article>
+        </Fragment>
+      </Achievement>
     </div>
   </section>
   <section class="relative">
@@ -460,8 +374,16 @@ const tracklist = [
 </Layout>
 
 <style lang="postcss">
+    :global(.link) {
+        @apply underline hover:text-bg hover:bg-fg w-fit;
+    }
+   :global(img) {
+
+      @apply flex flex-col justify-evenly items-center bg-gray-200;
+   }
+   
     section {
-        @apply px-4 max-w-xl mx-auto;
+        @apply px-4 max-w-xl  mx-auto;
     }
     .title {
         @apply text-[30vmin] md:text-[11rem] font-serif tracking-tight leading-[0.85] text-center;
@@ -473,17 +395,11 @@ const tracklist = [
     .tableofcontent .link:nth-child(2n) {
         @apply justify-self-end;
     }
-    :global(.link) {
-        @apply underline hover:text-bg hover:bg-fg w-fit;
-    }
+   
     .subheading {
         @apply font-bold text-4xl text-center mt-8 mb-3;
     }
-   
-   :global(img) {
-
-      @apply flex flex-col justify-evenly items-center bg-gray-200;
-   }
+  
     q {
       @apply italic;
     }
