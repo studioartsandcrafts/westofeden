@@ -24,6 +24,7 @@
   let isPlaying = false;
 
   type Status =
+    | "loading"
     | "waiting"
     | "canplay"
     | "canplaythrough"
@@ -37,6 +38,7 @@
     currentIndex = index;
     audioPlayer.src = tracklist[currentIndex >= 0 ? currentIndex : 0].src;
     audioPlayer.load();
+    status = "loading";
   }
 
   function pause() {
@@ -69,6 +71,15 @@
     if (isPlaying) audioPlayer.play();
   }
 
+  function AutoplayNextSong() {
+    if (!isPlaying) return;
+    const index = (currentIndex + 1) % tracklist.length;
+    if (index === 0) {
+      isPlaying = false;
+      return;
+    }
+    loadTrack(index);
+  }
   function formatTime(seconds: number) {
     if (isNaN(seconds)) return "0:00";
 
@@ -110,8 +121,8 @@
   on:timeupdate={() => (status = "playing")}
   on:seeking={() => (status = "seeking")}
   on:ended={() => {
-    isPlaying = false;
     currentTime = 0;
+    AutoplayNextSong();
   }}
   src={tracklist[currentIndex >= 0 ? currentIndex : 0].src}
 />
@@ -201,18 +212,20 @@
             disabled={currentTrack.src === track.src &&
               isPlaying &&
               (status === "canplay" ||
+                status === "loading" ||
                 status === "canplaythrough" ||
                 status === "waiting")}
           >
             {#if currentTrack.src !== track.src}
               Play
-            {:else if currentTrack.src === track.src && isPlaying && (status === "canplay" || status === "canplaythrough" || status === "waiting")}
-              <span class="loader"></span>
-              <!-- <span class="loader2 absolute"></span> -->
-            {:else if currentTrack.src === track.src && isPlaying === true}
-              Pause
-            {:else if currentTrack.src === track.src && isPlaying === false}
-              Play
+            {:else if currentTrack.src === track.src}
+              {#if isPlaying && (status === "canplay" || status === "canplaythrough" || status === "waiting" || status === "loading")}
+                <span class="loader"></span>
+              {:else if isPlaying}
+                Pause
+              {:else if !isPlaying}
+                Play
+              {/if}
             {/if}
           </button>
         </div>
