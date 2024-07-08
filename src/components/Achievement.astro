@@ -48,7 +48,7 @@ const { items } = Astro.props;
 
               {!!item.subtitle && <span class="px-1">•</span>}
 
-              {item.desc}
+              <span class="whitespace-nowrap">{item.desc}</span>
             </p>
           </div>
         </div>
