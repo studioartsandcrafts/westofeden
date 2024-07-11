@@ -23,10 +23,13 @@ const { title, data } = Astro.props;
   .chartitem {
     min-width: 2em;
   }
-    .chartitem:first-child {
-        @apply border-l-2 border-fg;
-    }
-    .chartitem:last-child>label {
-        @apply text-right right-0 left-auto;
-    }
+  .chartitem:first-child {
+      @apply border-l-2 border-fg;
+  }
+  .chartitem:last-child>label {
+      @apply text-right right-0 left-auto;
+  }
+  .chartitem:last-child {
+      @apply text-right;
+  }
 </style>
