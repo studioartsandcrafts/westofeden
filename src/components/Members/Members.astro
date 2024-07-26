@@ -59,6 +59,7 @@ const memberTypeIcon = {
           referrerpolicy="no-referrer"
           class="hover:underline hover:bg-fg hover:text-bg decoration-2 transition-100"
           data-member-type={member.data.type.reduce(
+            //@ts-ignore
             (prev, current) => prev + ":" + current
           )}
         >
