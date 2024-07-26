@@ -49,7 +49,9 @@ const members = defineCollection({
       archive: z.boolean().default(false),
       name: z.string(),
       links: z.record(z.string(), z.string()),
-      type: z.array(z.enum(["artist", "producer", "visual", "marketing"])),
+      type: z.array(
+        z.enum(["artist", "producer", "visual", "marketing", "management"])
+      ),
     }),
 });
 
