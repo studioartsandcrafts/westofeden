@@ -57,12 +57,12 @@ const memberTypeIcon = {
           href={getFirstLink(member.data.links)}
           target="_blank"
           referrerpolicy="no-referrer"
-          class="hover:underline hover:bg-fg hover:text-bg decoration-2 transition"
+          class="hover:underline hover:bg-fg hover:text-bg decoration-2 transition-100"
           data-member-type={member.data.type.reduce(
             (prev, current) => prev + ":" + current
           )}
         >
-          {member.data.type?.map((type) => (
+          {member.data.type.map((type) => (
             <Fragment set:html={memberTypeIcon[type]} aria-hidden />
           ))}
           <p>{member.data.name}</p>
