@@ -5,7 +5,7 @@ import svgArtist from "./artist.svg?raw";
 import svgProducer from "./producer.svg?raw";
 import svgVisual from "./visual.svg?raw";
 import svgMarketing from "./marketing.svg?raw";
-
+import svgManagement from "./management.svg?raw";
 const memberEntries = (
   await getCollection("members", ({ data }) => {
     return data.archive !== true;
@@ -26,14 +26,15 @@ function getFirstLink(links: { [key: string]: string }) {
 
 const memberTypeIcon = {
   artist: svgArtist,
+  management: svgManagement,
+  marketing: svgMarketing,
   producer: svgProducer,
   visual: svgVisual,
-  marketing: svgMarketing,
 };
 ---
 
 <ul
-  class="flex gap-x-1 md:gap-x-2 md:justify-center mb-3 mt-3 flex-wrap"
+  class="flex gap-x-1 md:gap-x-2 md:justify-center mb-3 mt-3 flex-wrap max-w-sm mx-auto"
   role="toolbar"
 >
   <button class="px-3 active" data-member-type={"all"}> all</button>
@@ -57,13 +58,13 @@ const memberTypeIcon = {
           target="_blank"
           referrerpolicy="no-referrer"
           class="hover:underline hover:bg-fg hover:text-bg decoration-2 transition"
-          data-member-type={member.data.type[0]}
+          data-member-type={member.data.type.reduce(
+            (prev, current) => prev + ":" + current
+          )}
         >
-          <Fragment
-            set:html={memberTypeIcon[member.data.type[0]]}
-            aria-hidden
-          />
-
+          {member.data.type?.map((type) => (
+            <Fragment set:html={memberTypeIcon[type]} aria-hidden />
+          ))}
           <p>{member.data.name}</p>
         </a>
       </li>
@@ -77,6 +78,7 @@ const memberTypeIcon = {
     producer: "bg-orange-300",
     visual: "bg-pink-300",
     marketing: "bg-blue-300",
+    management: "bg-purple-300",
   };
   type memberTypes = keyof typeof memberTypeColors;
   const allMembers = document.querySelectorAll("a[data-member-type]");
@@ -96,15 +98,13 @@ const memberTypeIcon = {
 
       // set colors on member
       allMembers.forEach((member) => {
-        const memberType = member.getAttribute(
-          "data-member-type"
-        ) as memberTypes;
+        const memberType = member.getAttribute("data-member-type");
         if (!memberType) return;
-
-        if (btnType === memberType) {
-          member.classList.add(memberTypeColors[memberType]);
-        } else {
-          member.classList.remove(memberTypeColors[memberType]);
+        Object.values(memberTypeColors).forEach((color) => {
+          if (member.classList.contains(color)) member.classList.remove(color);
+        });
+        if (memberType.includes(btnType)) {
+          member.classList.add(memberTypeColors[btnType]);
         }
       });
     });
