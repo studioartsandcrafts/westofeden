@@ -11,121 +11,48 @@ import DialogImage from "../components/DialogImage.astro";
 import Members from "../components/Members/Members.astro";
 import Achievement from "../components/Achievement.astro";
 
+import data from "./index.yml";
+console.log(data)
 //const collection = "epk";
 // const allPosts = await getCollection(collection); // we ignore this for now
-
-const streamingLinks = {
-  Spotify:
-    "https://open.spotify.com/artist/5UAITt0KoASPqmtWm1Tphl?si=saegrrT9Q8mnWcohWcjtvw",
-  Soundcloud: "https://soundcloud.com/westofeden-music",
-  "Apple Music": "https://music.apple.com/us/artist/west-of-eden/1728708854",
-};
-const socialLinks = {
-  Tiktok: "https://www.tiktok.com/@wstofedn",
-  Instagram: "https://www.instagram.com/wstofedn/",
-  Youtube: "https://www.youtube.com/@WESTOFEDEN-collective",
-  Twitter: "https://twitter.com/wstofedn",
-};
-
-const genderSplit = {
-  male: "50%",
-  female: "43%",
-  "nonbinary/ unspecified": "7%",
-};
-const ageRange = {
-  "<18": "5%",
-  "18-22": "23%",
-  "23-27": "30%",
-  "28-34": "19%",
-  "35-44": "11%",
-  "45+": "12%",
-};
-const photoList = {
-  "/src/images/image1.jpg": "no description written yet",
-  "/src/images/image2.jpg": "no description written yet",
-  "/src/images/image3.jpg": "no description written yet",
-  "/src/images/image4.jpg": "no description written yet",
-  "/src/images/image5.jpg": "no description written yet",
-  "/src/images/image6.jpg": "no description written yet",
-  "/src/images/image7.jpg": "no description written yet",
-  "/src/images/image8.jpg": "no description written yet",
-  "/src/images/image9.jpg": "no description written yet",
-};
-
-const tracklist = [
-  // {
-  //   artist: "WEST OF EDEN, jun.e, slone",
-  //   title: "Butterfly",
-  //   src: "/butterfly_sclol.mp3",
-  //   links: {
-  //     soundcloud: "https://soundcloud.com/westofeden-music/butterfly",
-  //     spotify:
-  //       "https://open.spotify.com/track/2wqa7edQscmRTT46aoHCNS?si=7bf920dc96bc418c",
-  //   },
-  // },
-  {
-    title: "fireworks (preview)",
-    artist: "WEST OF EDEN, keanu., jun.e, yoku, slone, riensu",
-    src: "/music/fireworks_snippet.mp3",
-  },
-  {
-    title: "LIKE THAT (unreleased demo)",
-    artist: "WEST OF EDEN",
-    src: "/music/likethat_snippet.mp3",
-  },
-  {
-    title: "hide (unreleased demo)",
-    artist: "WEST OF EDEN",
-    src: "/music/hide_snippet.mp3",
-  },
-  {
-    title: "lead (preview)",
-    artist: "WEST OF EDEN, keanu., riensu, yoku, jun.e,",
-    src: "/music/lead_snippet.mp3",
-  },
-  {
-    title: "side (preview)",
-    artist: "WEST OF EDEN, yoku, riensu, slone, keanu.",
-    src: "/music/side_snippet.mp3",
-  },
-];
+const { tracklist, streamingLinks, socialLinks, demographics, gallery } = data;
 ---
 
-<Layout title='West of Eden'>
-  <section id='top'>
-    <nav class='tableofcontent text-xl gap-2 mt-2'>
-      <p class='link'>
+<Layout title="West of Eden">
+  <section id="top">
+    <nav class="tableofcontent text-xl gap-2 mt-2">
+      <p class="link">
         <Link href={"#photos"} newWindow={false}>Photos</Link>
       </p>
 
       <svg
-        fill='none'
-        height='2em'
-        class='-mb-4'
-        viewBox='0 0 25 27'
+        fill="none"
+        height="2em"
+        class="-mb-4"
+        viewBox="0 0 25 27"
         aria-hidden
-        xmlns='http://www.w3.org/2000/svg'
+        xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d='m15.681 26.2c-0.1304-0.0525-0.3202-0.2557-0.4218-0.4516-0.214-0.4126-0.4735-1.671-0.4739-2.2979-1e-4 -0.2373-0.1164-0.9169-0.2585-1.5103-0.4304-1.7978-0.5461-2.6531-0.3737-2.7623 0.3478-0.2203 0.5597-0.0698 0.776 0.5509 0.4114 1.1804 0.7085 1.9278 0.9771 2.4578 0.3493 0.6892 1.016 1.7625 1.1872 1.9111 0.3698 0.3212 0.6046 0.7623 0.6046 1.1361 0 0.3294-0.0718 0.4687-0.3813 0.7406-0.3153 0.2768-0.4695 0.3336-0.89 0.3279-0.2798-0.0037-0.6153-0.0498-0.7457-0.1023zm-2.0737-8.6627c-0.2416-0.5637-0.6558-2.1285-0.6558-2.4778 0-0.1387-0.1008-0.3604-0.2241-0.4927-0.2507-0.2691-0.3129-0.2681-2.8503 0.0459-3.1382 0.3884-3.5916 0.4859-5.7713 1.2419-0.90768 0.3148-1.1566 0.3556-2.1777 0.3577-1.3472 0.0027-1.5991-0.1216-1.5963-0.7882 0.003262-0.7632 0.21126-0.8368 2.6206-0.9277 0.96064-0.0362 2.232-0.132 2.8254-0.2129 0.59331-0.0809 1.5399-0.2041 2.1036-0.2738 0.56364-0.0697 1.4064-0.1949 1.8727-0.2782 0.46635-0.0833 1.1732-0.1515 1.5706-0.1515 0.4297 0 0.8018-0.058 0.9181-0.143 0.1873-0.137 0.1879-0.1811 0.0123-1.0518-0.471-2.3362-0.6882-3.2515-0.9838-4.145-0.2412-0.72914-0.3788-2.1525-0.2451-2.5359 0.1937-0.55551 0.9612-0.72265 1.3584-0.29579 0.2928 0.31477 0.3242 0.54502 0.4598 3.3711 0.1167 2.4305 0.2488 3.6562 0.4505 4.1801 0.1075 0.279 0.1536 0.2966 0.7754 0.2963 0.3636-2e-4 1.0737-0.0676 1.578-0.1498 0.5044-0.0821 1.4024-0.2069 1.9957-0.2773 0.5933-0.0703 1.4428-0.1929 1.8878-0.2724s1.2702-0.2253 1.8339-0.3239c0.5636-0.0986 1.3032-0.2485 1.6434-0.3329 0.8438-0.2095 1.1314-0.1954 1.2692 0.0622 0.1511 0.2824-0.0361 0.6472-0.3322 0.6472-0.1192 0-0.518 0.0692-0.8862 0.1537-0.9893 0.2272-2.1885 0.4617-3.0426 0.5951-0.4154 0.0648-1.1678 0.1861-1.6721 0.2694s-1.6694 0.2339-2.589 0.3347c-0.9196 0.1007-1.7327 0.2001-1.8069 0.2208-0.2151 0.0601-0.1569 0.869 0.1391 1.9322 0.3941 1.4158 0.4312 1.6771 0.2544 1.7891-0.3246 0.2055-0.5352 0.1005-0.7355-0.3668zm-2.6922-13.618c-0.5099-0.42907-0.6874-0.85346-0.6874-1.6436 0-0.9201 0.2303-1.2505 0.9029-1.2955 0.4136-0.027647 0.5192 0.012537 0.7982 0.3036 0.2987 0.31168 0.3241 0.40256 0.3586 1.2817 0.0339 0.86771 0.016 0.9697-0.2158 1.2296-0.3849 0.4314-0.7454 0.47013-1.1565 0.12422z'
-          fill='currentColor'></path>
+          d="m15.681 26.2c-0.1304-0.0525-0.3202-0.2557-0.4218-0.4516-0.214-0.4126-0.4735-1.671-0.4739-2.2979-1e-4 -0.2373-0.1164-0.9169-0.2585-1.5103-0.4304-1.7978-0.5461-2.6531-0.3737-2.7623 0.3478-0.2203 0.5597-0.0698 0.776 0.5509 0.4114 1.1804 0.7085 1.9278 0.9771 2.4578 0.3493 0.6892 1.016 1.7625 1.1872 1.9111 0.3698 0.3212 0.6046 0.7623 0.6046 1.1361 0 0.3294-0.0718 0.4687-0.3813 0.7406-0.3153 0.2768-0.4695 0.3336-0.89 0.3279-0.2798-0.0037-0.6153-0.0498-0.7457-0.1023zm-2.0737-8.6627c-0.2416-0.5637-0.6558-2.1285-0.6558-2.4778 0-0.1387-0.1008-0.3604-0.2241-0.4927-0.2507-0.2691-0.3129-0.2681-2.8503 0.0459-3.1382 0.3884-3.5916 0.4859-5.7713 1.2419-0.90768 0.3148-1.1566 0.3556-2.1777 0.3577-1.3472 0.0027-1.5991-0.1216-1.5963-0.7882 0.003262-0.7632 0.21126-0.8368 2.6206-0.9277 0.96064-0.0362 2.232-0.132 2.8254-0.2129 0.59331-0.0809 1.5399-0.2041 2.1036-0.2738 0.56364-0.0697 1.4064-0.1949 1.8727-0.2782 0.46635-0.0833 1.1732-0.1515 1.5706-0.1515 0.4297 0 0.8018-0.058 0.9181-0.143 0.1873-0.137 0.1879-0.1811 0.0123-1.0518-0.471-2.3362-0.6882-3.2515-0.9838-4.145-0.2412-0.72914-0.3788-2.1525-0.2451-2.5359 0.1937-0.55551 0.9612-0.72265 1.3584-0.29579 0.2928 0.31477 0.3242 0.54502 0.4598 3.3711 0.1167 2.4305 0.2488 3.6562 0.4505 4.1801 0.1075 0.279 0.1536 0.2966 0.7754 0.2963 0.3636-2e-4 1.0737-0.0676 1.578-0.1498 0.5044-0.0821 1.4024-0.2069 1.9957-0.2773 0.5933-0.0703 1.4428-0.1929 1.8878-0.2724s1.2702-0.2253 1.8339-0.3239c0.5636-0.0986 1.3032-0.2485 1.6434-0.3329 0.8438-0.2095 1.1314-0.1954 1.2692 0.0622 0.1511 0.2824-0.0361 0.6472-0.3322 0.6472-0.1192 0-0.518 0.0692-0.8862 0.1537-0.9893 0.2272-2.1885 0.4617-3.0426 0.5951-0.4154 0.0648-1.1678 0.1861-1.6721 0.2694s-1.6694 0.2339-2.589 0.3347c-0.9196 0.1007-1.7327 0.2001-1.8069 0.2208-0.2151 0.0601-0.1569 0.869 0.1391 1.9322 0.3941 1.4158 0.4312 1.6771 0.2544 1.7891-0.3246 0.2055-0.5352 0.1005-0.7355-0.3668zm-2.6922-13.618c-0.5099-0.42907-0.6874-0.85346-0.6874-1.6436 0-0.9201 0.2303-1.2505 0.9029-1.2955 0.4136-0.027647 0.5192 0.012537 0.7982 0.3036 0.2987 0.31168 0.3241 0.40256 0.3586 1.2817 0.0339 0.86771 0.016 0.9697-0.2158 1.2296-0.3849 0.4314-0.7454 0.47013-1.1565 0.12422z"
+          fill="currentColor"></path>
       </svg>
 
-      <p class='link'>
+      <p class="link">
         <Link href={"#contact"} newWindow={false}>Contact</Link>
       </p>
     </nav>
-    <h1 class='title z-10 relative mb-4'>
+    <h1 class="title z-10 relative mb-4">
       <i>West of Eden</i>
     </h1>
     <Image
       src={"/src/images/cover.jpg"}
-      alt='photo of 5 members on a beach near the water'
-      class='w-full mb-2'
+      alt="photo of 5 members on a beach near the water"
+      class="w-full mb-2"
       lazyLoad={false}
     />
     <h2
-      class='inline-flex w-full justify-between font-bold text-5xl md:text-6xl'
+      class="inline-flex w-full justify-between font-bold text-5xl md:text-6xl"
     >
       <b>Press</b><b>Kit</b>
     </h2>
@@ -133,11 +60,11 @@ const tracklist = [
 
   <Player {tracklist} client:load />
 
-  <section class='relative mb-12 mt-12'>
-    <div id='contact' class='-top-[40%] absolute' aria-hidden></div>
-    <h2 class='subheading'>About</h2>
+  <section class="relative mb-12 mt-12">
+    <div id="contact" class="-top-[40%] absolute" aria-hidden></div>
+    <h2 class="subheading">About</h2>
 
-    <p class='font-serif text-xl indent-12'>
+    <p class="font-serif text-xl indent-12">
       WEST OF EDEN is an independent music collective based in Seattle,
       Washington with a focus on RNB and Indie Pop music. Comprised of vocalists
       riensu, slone, jun.e, and keanu. Supported by a team of in-house
@@ -145,86 +72,86 @@ const tracklist = [
     </p>
 
     <div
-      class='grid grid-cols-2 md:grid-cols-3 text-xl gap-2 mt-6 text-lg mb-6'
+      class="grid grid-cols-2 md:grid-cols-3 text-xl gap-2 mt-6 text-lg mb-6"
     >
       <div>
-        <h3 class='font-serif italic text-2xl'>Streaming</h3>
+        <h3 class="font-serif italic text-2xl">Streaming</h3>
         <ul>
           {
             Object.entries(streamingLinks).map(([key, href]) => (
-              <li class='link'>
-                <Link href={href}>{key}</Link>
+              <li class="link">
+                <Link href={href as string}>{key}</Link>
               </li>
             ))
           }
         </ul>
       </div>
       <div>
-        <h3 class='font-serif italic text-2xl'>Socials</h3>
+        <h3 class="font-serif italic text-2xl">Socials</h3>
         <ul>
           {
             Object.entries(socialLinks).map(([key, href]) => (
-              <li class='link'>
-                <Link href={href}>{key}</Link>
+              <li class="link">
+                <Link href={href as string}>{key}</Link>
               </li>
             ))
           }
         </ul>
       </div>
       <div>
-        <h3 class='font-serif italic text-2xl'>Contact</h3>
+        <h3 class="font-serif italic text-2xl">Contact</h3>
         <ul>
-          <li class='link'>
-            <Link href='mailto:woecollective@gmail.com' newWindow={false}>
+          <li class="link">
+            <Link href="mailto:woecollective@gmail.com" newWindow={false}>
               woecollective@gmail.com
             </Link>
           </li>
 
-          <li class='link'>
-            <Link href='mailto:himynameisjun.3@gmail.com' newWindow={false}>
+          <li class="link">
+            <Link href="mailto:himynameisjun.3@gmail.com" newWindow={false}>
               himynameisjun.3@gmail.com
             </Link>
           </li>
-          <li class='invisible' aria-hidden>*</li>
-          <li class='link'>
-            <Link href='/WOETechRider.pdf'>Tech Rider</Link>
+          <li class="invisible" aria-hidden>*</li>
+          <li class="link">
+            <Link href="/WOETechRider.pdf">Tech Rider</Link>
           </li>
         </ul>
       </div>
     </div>
   </section>
-  <section class='mb-24'>
-    <h2 class='text-center font-serif text-4xl py-3border-fg'>
+  <section class="mb-24">
+    <h2 class="text-center font-serif text-4xl py-3border-fg">
       <i>Members</i>
     </h2>
     <Members />
   </section>
-  <section class='bg-bg text-fg mt-2 pb-2 pt-2 mb-24'>
-    <h2 class='text-center font-serif text-4xl py-3 border-fg'>
+  <section class="bg-bg text-fg mt-2 pb-2 pt-2 mb-24">
+    <h2 class="text-center font-serif text-4xl py-3 border-fg">
       <i>Demographics</i>
     </h2>
     <h3>Top Countries</h3>
-    <div class='grid grid-cols-2 md:grid-cols-4 text-2xl font-serif mb-4'>
+    <div class="grid grid-cols-2 md:grid-cols-4 text-2xl font-serif mb-4">
       <p>1. Japan</p>
       <p>2. USA</p>
       <p>3. Taiwan</p>
       <p>4. Canada</p>
     </div>
-    <Chart title='Gender Split' data={genderSplit} />
-    <Chart title='Age Range' data={ageRange} />
+    <Chart title="Gender Split" data={demographics.genderSplit} />
+    <Chart title="Age Range" data={demographics.ageRange} />
   </section>
 
-  <section class='mb-24'>
-    <h2 class='subheading' id='mv'>MV</h2>
-    <YouTube id='osAEtwyeWC0' class='mb-3' />
-    <YouTube id='BEIKnLqyA1Y' />
+  <section class="mb-24">
+    <h2 class="subheading" id="mv">MV</h2>
+    <YouTube id="osAEtwyeWC0" class="mb-3" />
+    <YouTube id="BEIKnLqyA1Y" />
   </section>
-  <section class='mb-24'>
-    <h2 class='subheading'>Recent Achievements</h2>
-    <p class='text-center -mt-3 mb-4 font-serif italic'>
+  <section class="mb-24">
+    <h2 class="subheading">Recent Achievements</h2>
+    <p class="text-center -mt-3 mb-4 font-serif italic">
       (Streaming statistics from Spotify only)
     </p>
-    <div class='divide-y-2 divide-fg'>
+    <div class="divide-y-2 divide-fg">
       <Achievement
         items={[
           {
@@ -262,21 +189,21 @@ const tracklist = [
           },
         ]}
       >
-        <Fragment slot='header'>
-          <p class='leading-none'>
-            WEST OF EDEN <span class='text-base whitespace-nowrap'
+        <Fragment slot="header">
+          <p class="leading-none">
+            WEST OF EDEN <span class="text-base whitespace-nowrap"
               >(formerly “ways of expression”)</span
             >
           </p>
-          <p class='leading-none text-right'>15k monthly listeners</p>
+          <p class="leading-none text-right">15k monthly listeners</p>
         </Fragment>
         <video
-          preload='metadata'
-          poster='/WOEshaun2023highlight.jpg'
+          preload="metadata"
+          poster="/WOEshaun2023highlight.jpg"
           controls
-          class='w-full'
+          class="w-full"
         >
-          <source src='/WOEshaun2023highlight.mp4' type='video/mp4' />
+          <source src="/WOEshaun2023highlight.mp4" type="video/mp4" />
         </video>
       </Achievement>
 
@@ -304,7 +231,7 @@ const tracklist = [
           },
         ]}
       >
-        <Fragment slot='header'>
+        <Fragment slot="header">
           <p>riensu</p>
           <p>27.8k monthly listeners</p>
         </Fragment>
@@ -319,7 +246,7 @@ const tracklist = [
           },
         ]}
       >
-        <Fragment slot='header'>
+        <Fragment slot="header">
           <p>slone</p>
           <p>92.7k monthly listeners</p>
         </Fragment>
@@ -334,7 +261,7 @@ const tracklist = [
           },
         ]}
       >
-        <Fragment slot='header'>
+        <Fragment slot="header">
           <p>keanu.</p>
           <p>12.1k monthly listeners</p>
         </Fragment>
@@ -349,7 +276,7 @@ const tracklist = [
           },
         ]}
       >
-        <Fragment slot='header'>
+        <Fragment slot="header">
           <p>jun.e</p>
           <p>13.7k monthly listeners</p>
         </Fragment>
@@ -372,27 +299,31 @@ const tracklist = [
       </Achievement> -->
     </div>
   </section>
-  <section class='relative'>
-    <div id='photos' class='-top-[40%] absolute' aria-hidden></div>
+  <section class="relative">
+    <div id="photos" class="-top-[40%] absolute" aria-hidden></div>
 
-    <h2 class='subheading'>Photos</h2>
-    <div class='grid grid-cols-3 gap-1'>
+    <h2 class="subheading">Photos</h2>
+    <div class="grid grid-cols-3 gap-1">
       {
-        Object.entries(photoList).map(([src, alt]) => (
+        Object.entries(gallery).map(([src, alt]) => (
           <button
-            type='button'
-            class='imageviewer-btn hover:opacity-80 active:opacity-70 transition-opacity'
+            type="button"
+            class="imageviewer-btn hover:opacity-80 active:opacity-70 transition-opacity"
           >
-            <Image src={src} alt={alt} class='object-cover aspect-square ' />
+            <Image
+              src={src}
+              alt={alt as string}
+              class="object-cover aspect-square "
+            />
           </button>
         ))
       }
       <DialogImage>
-        <img class='object-contain h-full max-h-[90svh] max-w-[90svw]' />
+        <img class="object-contain h-full max-h-[90svh] max-w-[90svw] w-fit min-w-12" />
       </DialogImage>
     </div>
-    <p class='text-center mt-2 font-serif italic'>
-      <a href='#contact' class='link'>Contact us</a> for full media kit
+    <p class="text-center mt-2 font-serif italic">
+      <a href="#contact" class="link">Contact us</a> for full media kit
     </p>
   </section>
 </Layout>

@@ -1,0 +1,66 @@
+{
+    "tracklist": [
+        {
+            "title": "fireworks (preview)",
+            "artist": "WEST OF EDEN, keanu., jun.e, yoku, slone, riensu",
+            "src": "/music/fireworks_snippet.mp3"
+        },
+        {
+            "title": "LIKE THAT (unreleased demo)",
+            "artist": "WEST OF EDEN",
+            "src": "/music/likethat_snippet.mp3"
+        },
+        {
+            "title": "hide (unreleased demo)",
+            "artist": "WEST OF EDEN",
+            "src": "/music/hide_snippet.mp3"
+        },
+        {
+            "title": "lead (preview)",
+            "artist": "WEST OF EDEN, keanu., riensu, yoku, jun.e,",
+            "src": "/music/lead_snippet.mp3"
+        },
+        {
+            "title": "side (preview)",
+            "artist": "WEST OF EDEN, yoku, riensu, slone, keanu.",
+            "src": "/music/side_snippet.mp3"
+        }
+    ],
+    "streamingLinks": {
+        "Spotify": "https://open.spotify.com/artist/5UAITt0KoASPqmtWm1Tphl",
+        "Soundcloud": "https://soundcloud.com/westofeden-music",
+        "Apple Music": "https://music.apple.com/us/artist/west-of-eden/1728708854"
+    },
+    "socialLinks": {
+        "Tiktok": "https://www.tiktok.com/@wstofedn",
+        "Instagram": "https://www.instagram.com/wstofedn/",
+        "Youtube": "https://www.youtube.com/@WESTOFEDEN-collective",
+        "Twitter": "https://twitter.com/wstofedn"
+    },
+    "demographics": {
+        "genderSplit": {
+            "male": "50%",
+            "female": "43%",
+            "nonbinary/ unspecified": "7%"
+        },
+        "ageRange": {
+            "<18": "5%",
+            "18-22": "23%",
+            "23-27": "30%",
+            "28-34": "19%",
+            "35-44": "11%",
+            "45+": "12%"
+        }
+    },
+    "gallery": {
+        "/src/images/image1.jpg": "no description written yet",
+        "/src/images/image2.jpg": "no description written yet",
+        "/src/images/image3.jpg": "no description written yet",
+        "/src/images/image4.jpg": "no description written yet",
+        "/src/images/image5.jpg": "no description written yet",
+        "/src/images/image6.jpg": "no description written yet",
+        "/src/images/image7.jpg": "no description written yet",
+        "/src/images/image8.jpg": "no description written yet",
+        "/src/images/image9.jpg": "no description written yet"
+    }
+}
