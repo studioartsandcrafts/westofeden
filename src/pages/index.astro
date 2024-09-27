@@ -12,10 +12,11 @@ import Members from "../components/Members/Members.astro";
 import Achievement from "../components/Achievement.astro";
 
 import data from "./index.yml";
-console.log(data)
+//console.log(data)
+
 //const collection = "epk";
 // const allPosts = await getCollection(collection); // we ignore this for now
-const { tracklist, streamingLinks, socialLinks, demographics, gallery } = data;
+const { tracklist, streamingLinks, socialLinks, demographics, gallery, achievements } = data;
 ---
 
 <Layout title="West of Eden">
@@ -132,10 +133,7 @@ const { tracklist, streamingLinks, socialLinks, demographics, gallery } = data;
     </h2>
     <h3>Top Countries</h3>
     <div class="grid grid-cols-2 md:grid-cols-4 text-2xl font-serif mb-4">
-      <p>1. Japan</p>
-      <p>2. USA</p>
-      <p>3. Taiwan</p>
-      <p>4. Canada</p>
+      {demographics.countries.map((i:string,index:number) => (<p>{index+1}. {i}</p>))}
     </div>
     <Chart title="Gender Split" data={demographics.genderSplit} />
     <Chart title="Age Range" data={demographics.ageRange} />
@@ -153,132 +151,56 @@ const { tracklist, streamingLinks, socialLinks, demographics, gallery } = data;
     </p>
     <div class="divide-y-2 divide-fg">
       <Achievement
-        items={[
-          {
-            title: "SHAUN On the Road North America Tour 2023",
-            subtitle: "Seattle Opening Act",
-            desc: "(April 2023)",
-          },
-
-          {
-            title: "riensu & friends",
-            subtitle: "Headlining Show",
-            desc: "(March 2024)",
-          },
-          {
-            title: "Saint Martin's University (SMU) Spring Fest",
-            subtitle: "Main Act",
-            desc: "(April 2024)",
-          },
-          {
-            title: "ISAUW Keraton (Headlined by Rocco + Emily Sie)",
-            subtitle: "Opening Act",
-            desc: "(May 2024)",
-          },
-          {
-            title: "butterfly",
-            desc: "80k streams",
-            imgsrc: "/images/butterfly.jpg",
-            link: "https://open.spotify.com/track/2wqa7edQscmRTT46aoHCNS",
-          },
-          {
-            title: "CONTACT",
-            desc: "61k streams",
-            imgsrc: "/images/contact.jpg",
-            link: "https://open.spotify.com/track/4ERvaHb0qu8mcGbl1qSsOQ",
-          },
-        ]}
+      items={achievements.woe.items}
+    >
+      <Fragment slot="header">
+        <p class="leading-none">
+          WEST OF EDEN <span class="text-base whitespace-nowrap"
+            >(formerly “ways of expression”)</span
+          >
+        </p>
+        <p class="leading-none text-right">{achievements.woe.listeners} monthly listeners</p>
+      </Fragment>
+      <video
+        preload="metadata"
+        poster="/WOEshaun2023highlight.jpg"
+        controls
+        class="w-full"
       >
-        <Fragment slot="header">
-          <p class="leading-none">
-            WEST OF EDEN <span class="text-base whitespace-nowrap"
-              >(formerly “ways of expression”)</span
-            >
-          </p>
-          <p class="leading-none text-right">15k monthly listeners</p>
-        </Fragment>
-        <video
-          preload="metadata"
-          poster="/WOEshaun2023highlight.jpg"
-          controls
-          class="w-full"
-        >
-          <source src="/WOEshaun2023highlight.mp4" type="video/mp4" />
-        </video>
-      </Achievement>
+        <source src="/WOEshaun2023highlight.mp4" type="video/mp4" />
+      </video>
+    </Achievement>
 
       <Achievement
-        items={[
-          {
-            title: "until we meet again",
-            subtitle: "New Music Friday Spotify Editorial",
-            desc: "(December 2023)",
-            imgsrc: "/images/untillwemeetagain.jpg",
-            link: "https://open.spotify.com/track/72B7YxcrXMAWqm0CH1qncS",
-          },
-
-          {
-            title: "silly little love",
-            subtitle: "",
-            desc: "475k streams",
-            imgsrc: "/images/sillylittlelove.jpg",
-            link: "https://open.spotify.com/track/0N7DX9Cc2kyjoMq3s05q12",
-          },
-          {
-            title: "Jimmy Brown Like the First Time North America Tour 2023",
-            subtitle: "Seattle Opening Act",
-            desc: "(November 2023)",
-          },
-        ]}
+        items={achievements.riensu.items}
       >
         <Fragment slot="header">
           <p>riensu</p>
-          <p>27.8k monthly listeners</p>
+          <p>{achievements.riensu.listeners} monthly listeners</p>
         </Fragment>
       </Achievement>
       <Achievement
-        items={[
-          {
-            title: "wish u were gone",
-            desc: "1.6M streams",
-            imgsrc: "/images/wishuweregone.jpg",
-            link: "https://open.spotify.com/track/1G4GFMIOxCvPJusmWWcWrz?si=decaee4bae1f463c",
-          },
-        ]}
+        items={achievements.slone.items}
       >
         <Fragment slot="header">
           <p>slone</p>
-          <p>92.7k monthly listeners</p>
+          <p>{achievements.slone.listeners} monthly listeners</p>
         </Fragment>
       </Achievement>
       <Achievement
-        items={[
-          {
-            title: "ENDLESSLY",
-            desc: "25k streams",
-            imgsrc: "/images/endlessly.jpg",
-            link: "https://open.spotify.com/track/27DMbtlp5VKP1AnvwkoveS?si=549d958455fe4405",
-          },
-        ]}
+        items={achievements.keanu.items}
       >
         <Fragment slot="header">
           <p>keanu.</p>
-          <p>12.1k monthly listeners</p>
+          <p>{achievements.keanu.listeners}monthly listeners</p>
         </Fragment>
       </Achievement>
       <Achievement
-        items={[
-          {
-            title: "i don't mind",
-            desc: "53k streams",
-            imgsrc: "/images/idontmind.jpg",
-            link: "https://open.spotify.com/track/4dNUZX3zlysGBvAgnULtIZ?si=2f61efc2077d4c39",
-          },
-        ]}
+        items={achievements.june.items}
       >
         <Fragment slot="header">
           <p>jun.e</p>
-          <p>13.7k monthly listeners</p>
+          <p>{achievements.june.listeners} monthly listeners</p>
         </Fragment>
       </Achievement>
       <!-- 

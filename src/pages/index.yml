@@ -24,6 +24,11 @@ socialLinks:
   Youtube: "https://www.youtube.com/@WESTOFEDEN-collective"
   Twitter: "https://twitter.com/wstofedn"
 demographics:
+  countries:
+    - US
+    - Japan
+    - Thailand
+    - Philippines
   genderSplit:
     male: 50%
     female: 43%
@@ -45,3 +50,65 @@ gallery:
   /src/images/image7.jpg: no description written yet
   /src/images/image8.jpg: no description written yet
   /src/images/image9.jpg: no description written yet
+achievements:
+  june:
+    listeners: 18.3k
+    items:
+      - title: "i don't mind"
+        desc: "53k streams"
+        imgsrc: "/images/idontmind.jpg"
+        link: "https://open.spotify.com/track/4dNUZX3zlysGBvAgnULtIZ?si=2f61efc2077d4c39"
+  keanu:
+    listeners: 18k
+    items:
+      - title: "ENDLESSLY"
+        desc: "25k streams"
+        imgsrc: "/images/endlessly.jpg"
+        link: "https://open.spotify.com/track/27DMbtlp5VKP1AnvwkoveS?si=549d958455fe4405"
+  slone:
+    listeners: 108.7k
+    items:
+      - title: wish u were gone
+        desc: 2M streams
+        imgsrc: /images/wishuweregone.jpg
+        link: "https://open.spotify.com/track/1G4GFMIOxCvPJusmWWcWrz?si=decaee4bae1f463c"
+  riensu:
+    listeners: 29.4k
+    items:
+      - title: until we meet again
+        subtitle: New Music Friday Spotify Editorial
+        desc: (December 2023)
+        imgsrc: /images/untillwemeetagain.jpg
+        link: "https://open.spotify.com/track/72B7YxcrXMAWqm0CH1qncS"
+      - title: silly little love
+        subtitle: ""
+        desc: 498k streams
+        imgsrc: /images/sillylittlelove.jpg
+        link: "https://open.spotify.com/track/0N7DX9Cc2kyjoMq3s05q12"
+      - title: Jimmy Brown Like the First Time North America Tour 2023
+        subtitle: Seattle Opening Act
+        desc: (November 2023)
+
+  woe:
+    listeners: 23.1k
+    items:
+      - title: SHAUN On the Road North America Tour 2023
+        subtitle: Seattle Opening Act
+        desc: (April 2023)
+      - title: riensu & friends
+        subtitle: Headlining Show
+        desc: (March 2024)
+      - title: Saint Martin's University (SMU) Spring Fest
+        subtitle: Main Act
+        desc: (April 2024)
+      - title: ISAUW Keraton (Headlined by Rocco + Emily Sie)
+        subtitle: Opening Act
+        desc: (May 2024)
+      - title: butterfly
+        desc: 99k streams
+        imgsrc: /images/butterfly.jpg
+        link: "https://open.spotify.com/track/2wqa7edQscmRTT46aoHCNS"
+      - title: CONTACT
+        desc: 76k streams
+        imgsrc: /images/contact.jpg
+        link: "https://open.spotify.com/track/4ERvaHb0qu8mcGbl1qSsOQ"
