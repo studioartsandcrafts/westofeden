@@ -49,28 +49,28 @@ gallery:
   /src/images/image9.jpg: no description written yet
 achievements:
   june:
-    listeners: 18.3k
+    listeners: 29.1k
     items:
       - title: "i don't mind"
         desc: "53k streams"
         imgsrc: "/images/idontmind.jpg"
         link: "https://open.spotify.com/track/4dNUZX3zlysGBvAgnULtIZ?si=2f61efc2077d4c39"
   keanu:
-    listeners: 18k
+    listeners: 22.8k
     items:
       - title: "ENDLESSLY"
         desc: "25k streams"
         imgsrc: "/images/endlessly.jpg"
         link: "https://open.spotify.com/track/27DMbtlp5VKP1AnvwkoveS?si=549d958455fe4405"
   slone:
-    listeners: 108.7k
+    listeners: 134.2k
     items:
       - title: wish u were gone
-        desc: 2M streams
+        desc: 2.3M streams
         imgsrc: /images/wishuweregone.jpg
         link: "https://open.spotify.com/track/1G4GFMIOxCvPJusmWWcWrz?si=decaee4bae1f463c"
   riensu:
-    listeners: 29.4k
+    listeners: 43.9k
     items:
       - title: until we meet again
         subtitle: New Music Friday Spotify Editorial
@@ -79,7 +79,7 @@ achievements:
         link: "https://open.spotify.com/track/72B7YxcrXMAWqm0CH1qncS"
       - title: silly little love
         subtitle: ""
-        desc: 498k streams
+        desc: 515k streams
         imgsrc: /images/sillylittlelove.jpg
         link: "https://open.spotify.com/track/0N7DX9Cc2kyjoMq3s05q12"
       - title: Jimmy Brown Like the First Time North America Tour 2023
@@ -87,7 +87,7 @@ achievements:
         desc: (November 2023)
 
   woe:
-    listeners: 31.3k
+    listeners: 36.7k
     items:
       - title: SHAUN On the Road North America Tour 2023
         subtitle: Seattle Opening Act
@@ -102,7 +102,7 @@ achievements:
         subtitle: Opening Act
         desc: (May 2024)
       - title: butterfly
-        desc: 100k streams
+        desc: 124k streams
         imgsrc: /images/butterfly.jpg
         link: "https://open.spotify.com/track/2wqa7edQscmRTT46aoHCNS"
       - title: CONTACT
