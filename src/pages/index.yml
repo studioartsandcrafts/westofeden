@@ -56,7 +56,7 @@ achievements:
         imgsrc: "/images/idontmind.jpg"
         link: "https://open.spotify.com/track/4dNUZX3zlysGBvAgnULtIZ?si=2f61efc2077d4c39"
   keanu:
-    listeners: 28.3k
+    listeners: 28.3k 
     items:
       - title: "ENDLESSLY"
         desc: "27k streams"
