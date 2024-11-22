@@ -24,8 +24,8 @@ demographics:
   countries:
     - US
     - Japan
-    - Thailand
     - Philippines
+    - Canada
   genderSplit:
     male: 50%
     female: 43%
