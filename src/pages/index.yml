@@ -49,28 +49,28 @@ gallery:
   /src/images/image9.jpg: no description written yet
 achievements:
   june:
-    listeners: 40.7k
+    listeners: 66.2k
     items:
       - title: "i don't mind"
-        desc: "56k streams"
+        desc: "59k streams"
         imgsrc: "/images/idontmind.jpg"
         link: "https://open.spotify.com/track/4dNUZX3zlysGBvAgnULtIZ?si=2f61efc2077d4c39"
   keanu:
-    listeners: 28.3k 
+    listeners: 45.6k 
     items:
       - title: "ENDLESSLY"
         desc: "27k streams"
         imgsrc: "/images/endlessly.jpg"
         link: "https://open.spotify.com/track/27DMbtlp5VKP1AnvwkoveS?si=549d958455fe4405"
   slone:
-    listeners: 200.1k
+    listeners: 210.7k
     items:
       - title: wish u were gone
-        desc: 2.8M streams
+        desc: 3.6M streams
         imgsrc: /images/wishuweregone.jpg
         link: "https://open.spotify.com/track/1G4GFMIOxCvPJusmWWcWrz?si=decaee4bae1f463c"
   riensu:
-    listeners: 38.8k
+    listeners: 57.4k
     items:
       - title: until we meet again
         subtitle: New Music Friday Spotify Editorial
@@ -79,7 +79,7 @@ achievements:
         link: "https://open.spotify.com/track/72B7YxcrXMAWqm0CH1qncS"
       - title: silly little love
         subtitle: ""
-        desc: 528k streams
+        desc: 555k streams
         imgsrc: /images/sillylittlelove.jpg
         link: "https://open.spotify.com/track/0N7DX9Cc2kyjoMq3s05q12"
       - title: Jimmy Brown Like the First Time North America Tour 2023
@@ -87,7 +87,7 @@ achievements:
         desc: (November 2023)
 
   woe:
-    listeners: 52.7k
+    listeners: 81.1k
     items:
       - title: SHAUN On the Road North America Tour 2023
         subtitle: Seattle Opening Act
@@ -102,10 +102,10 @@ achievements:
         subtitle: Opening Act
         desc: (May 2024)
       - title: butterfly
-        desc: 160k streams
+        desc: 247k streams
         imgsrc: /images/butterfly.jpg
         link: "https://open.spotify.com/track/2wqa7edQscmRTT46aoHCNS"
       - title: CONTACT
-        desc: 106k streams
+        desc: 153k streams
         imgsrc: /images/contact.jpg
         link: "https://open.spotify.com/track/4ERvaHb0qu8mcGbl1qSsOQ"
