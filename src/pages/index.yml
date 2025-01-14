@@ -24,19 +24,19 @@ demographics:
   countries:
     - US
     - Japan
-    - Thailand
     - Philippines
+    - Canada
   genderSplit:
-    male: 50%
-    female: 43%
+    male: 48%
+    female: 45%
     nonbinary/ unspecified: 7%
   ageRange:
-    <18: 5%
-    18-22: 23%
-    23-27: 30%
-    28-34: 19%
-    35-44: 11%
-    45+: 12%
+    <18: 4%
+    18-22: 26%
+    23-27: 35%
+    28-34: 20%
+    35-44: 8%
+    45+: 7%
 gallery:
   /src/images/image1.jpg: no description written yet
   /src/images/image2.jpg: no description written yet
@@ -49,28 +49,28 @@ gallery:
   /src/images/image9.jpg: no description written yet
 achievements:
   june:
-    listeners: 29.1k
+    listeners: 66.2k
     items:
       - title: "i don't mind"
-        desc: "53k streams"
+        desc: "59k streams"
         imgsrc: "/images/idontmind.jpg"
         link: "https://open.spotify.com/track/4dNUZX3zlysGBvAgnULtIZ?si=2f61efc2077d4c39"
   keanu:
-    listeners: 22.8k
+    listeners: 45.6k 
     items:
       - title: "ENDLESSLY"
-        desc: "25k streams"
+        desc: "27k streams"
         imgsrc: "/images/endlessly.jpg"
         link: "https://open.spotify.com/track/27DMbtlp5VKP1AnvwkoveS?si=549d958455fe4405"
   slone:
-    listeners: 134.2k
+    listeners: 210.7k
     items:
       - title: wish u were gone
-        desc: 2.3M streams
+        desc: 3.6M streams
         imgsrc: /images/wishuweregone.jpg
         link: "https://open.spotify.com/track/1G4GFMIOxCvPJusmWWcWrz?si=decaee4bae1f463c"
   riensu:
-    listeners: 43.9k
+    listeners: 57.4k
     items:
       - title: until we meet again
         subtitle: New Music Friday Spotify Editorial
@@ -79,7 +79,7 @@ achievements:
         link: "https://open.spotify.com/track/72B7YxcrXMAWqm0CH1qncS"
       - title: silly little love
         subtitle: ""
-        desc: 515k streams
+        desc: 555k streams
         imgsrc: /images/sillylittlelove.jpg
         link: "https://open.spotify.com/track/0N7DX9Cc2kyjoMq3s05q12"
       - title: Jimmy Brown Like the First Time North America Tour 2023
@@ -87,7 +87,7 @@ achievements:
         desc: (November 2023)
 
   woe:
-    listeners: 36.7k
+    listeners: 81.1k
     items:
       - title: SHAUN On the Road North America Tour 2023
         subtitle: Seattle Opening Act
@@ -102,10 +102,10 @@ achievements:
         subtitle: Opening Act
         desc: (May 2024)
       - title: butterfly
-        desc: 124k streams
+        desc: 247k streams
         imgsrc: /images/butterfly.jpg
         link: "https://open.spotify.com/track/2wqa7edQscmRTT46aoHCNS"
       - title: CONTACT
-        desc: 76k streams
+        desc: 153k streams
         imgsrc: /images/contact.jpg
         link: "https://open.spotify.com/track/4ERvaHb0qu8mcGbl1qSsOQ"
