@@ -97,7 +97,7 @@ shows:
     highlights:
       - Barboza (Capitol Hill) in Seattle, Washington, United States
       - Co-headlining Act
-      - "Attendance: 210 (SOLD OUT projected)"
+      - "Attendance: 210 (SOLD OUT)"
   - title: "Dxngelo x King Zaae x WEST OF EDEN x BNH Deluxe"
     artist: WEST OF EDEN
     date: January 16th, 2025
@@ -140,9 +140,6 @@ achievements:
         desc: 555k streams
         imgsrc: /images/sillylittlelove.jpg
         link: "https://open.spotify.com/track/0N7DX9Cc2kyjoMq3s05q12"
-      - title: Jimmy Brown Like the First Time North America Tour 2023
-        subtitle: Seattle Opening Act
-        desc: (November 2023)
 
   woe:
     listeners: 81.1k
