@@ -20,8 +20,8 @@ const imageSrc = (await images[src]()).default;
 // hotfix bc im stupid and none of this code works
 const imageWidth = imageSrc.width / 2;
 
-const widths = [240, 540, 720, imageWidth];
-const sizes = `(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${imageWidth}px`;
+const widths = [240, 540, 720, 1280];
+const sizes = `(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${1280}px`;
 ---
 
 <div class=`img-wrapper ` data-local-img>

@@ -1,10 +1,11 @@
+<!--- lets rewrite this or something why is this so stupidly written -->
 <dialog class="imageviewer">
   <button
     type="button"
     class="p-2 text-center hover:text-bg hover:bg-fg border-b-2 border-fg w-full text-fg"
     >close image</button
   >
-  <div class="img-wrapper-dialog">
+  <div class="img-wrapper-dialog h-[inherit] w-[inherit]">
     <div class="loader"></div>
     <slot />
   </div>
@@ -12,13 +13,13 @@
 <script>
   // Find all buttons with the `alert` class on the page.
   const buttons = document.querySelectorAll(
-    "button.imageviewer-btn"
+    "button.imageviewer-btn",
   ) as NodeListOf<HTMLButtonElement>;
   const dialog = document.querySelector(
-    "dialog.imageviewer"
+    "dialog.imageviewer",
   ) as HTMLDialogElement;
   const img = dialog.querySelector(
-    "dialog.imageviewer img"
+    "dialog.imageviewer img",
   ) as HTMLImageElement;
   // Handle clicks on each button.
   buttons.forEach((button) => {
@@ -60,7 +61,8 @@
 
 <style lang="postcss">
      .imageviewer {
-    @apply bg-bg border-2 border-fg ;
+    @apply bg-bg border-2 border-fg w-full h-full ;
+    grid-template-rows: auto 1fr;
    }
    .loader {
     transform: translate(-50%, -50%);
