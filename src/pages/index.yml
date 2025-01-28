@@ -47,6 +47,64 @@ gallery:
   /src/images/image7.jpg: no description written yet
   /src/images/image8.jpg: no description written yet
   /src/images/image9.jpg: no description written yet
+
+shows:
+  - title: "Jimmy Brown w/ ROVV - Like The First Time: North American Tour 2023"
+    artist: riensu
+    date: November 2023
+    highlights:
+      - The Crocodile in Seattle, Washington, United States
+      - Opening Act
+      - "Attendance: 750"
+  - title: "SHAUN - On the Road: North America Tour 2023"
+    artist: WEST OF EDEN
+    date: April 2023
+    highlights:
+      - Madame Lou’s in Seattle, Washington, United States
+      - Opening Act
+      - "Attendance: 300"
+  - title: "riensu & friends"
+    artist: WEST OF EDEN
+    date: March 2024
+    highlights:
+      - University Heights Center in Seattle, Washington, United States
+      - Headlining Act
+      - "Attendance: 200"
+  - title: "ISAUW Keraton (Headlined by Rocco and Emily Sie)"
+    artist: WEST OF EDEN
+    date: May 2024
+    highlights:
+      - University of Washington - HUB Lawn in Seattle, Washington, United States
+      - Opening Act
+      - "Attendance: 200"
+  - title: "MRG LIVE - daysormay ‘MODERATION’ Album Release Show"
+    artist: keanu.
+    date: September 2024
+    highlights:
+      - The Biltmore Cabaret in Vancouver, British Columbia, Canada
+      - Featuring artist alongside Opening Act, COSETTE
+      - "Attendance: 350"
+  - title: "Unite UW Alumni Fall Ball 2024"
+    artist: WEST OF EDEN
+    date: November 2024
+    highlights:
+      - University of Washington - UW Tower in Seattle, Washington, United States
+      - Headlining Act
+      - "Attendance: 220"
+  - title: "LCN! x WEST OF EDEN x Rodney Tristan Show"
+    artist: WEST OF EDEN
+    date: January 9th, 2025
+    highlights:
+      - Barboza (Capitol Hill) in Seattle, Washington, United States
+      - Co-headlining Act
+      - "Attendance: 210 (SOLD OUT projected)"
+  - title: "Dxngelo x King Zaae x WEST OF EDEN x BNH Deluxe"
+    artist: WEST OF EDEN
+    date: January 16th, 2025
+    highlights:
+      - Skylark Cafe & Club in Seattle, Washington, United States
+      - Co-headlining Act
+      - "Attendance: 85"
 achievements:
   june:
     listeners: 66.2k
@@ -56,7 +114,7 @@ achievements:
         imgsrc: "/images/idontmind.jpg"
         link: "https://open.spotify.com/track/4dNUZX3zlysGBvAgnULtIZ?si=2f61efc2077d4c39"
   keanu:
-    listeners: 45.6k 
+    listeners: 45.6k
     items:
       - title: "ENDLESSLY"
         desc: "27k streams"
@@ -89,18 +147,6 @@ achievements:
   woe:
     listeners: 81.1k
     items:
-      - title: SHAUN On the Road North America Tour 2023
-        subtitle: Seattle Opening Act
-        desc: (April 2023)
-      - title: riensu & friends
-        subtitle: Headlining Show
-        desc: (March 2024)
-      - title: Saint Martin's University (SMU) Spring Fest
-        subtitle: Main Act
-        desc: (April 2024)
-      - title: ISAUW Keraton (Headlined by Rocco + Emily Sie)
-        subtitle: Opening Act
-        desc: (May 2024)
       - title: butterfly
         desc: 247k streams
         imgsrc: /images/butterfly.jpg
