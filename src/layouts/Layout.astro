@@ -2,6 +2,7 @@
 import Footer from "../components/Footer.astro";
 import cover from "../images/link_preview.jpg";
 import * as description from "../pages/indexIntroduction.md";
+
 import removeMd from "remove-markdown";
 interface Props {
   title: string;
@@ -14,7 +15,7 @@ interface Props {
 //   "WEST OF EDEN is a music collective based in Seattle, Washington with a focus on RNB and Indie Pop music. Made up of vocalists, riensu, slone, jun.e, and keanu., alongside in-house producers, videographers and graphic artists. ";
 
 const { title, colors } = Astro.props;
-const desc = removeMd(description.rawContent());
+const desc = description.frontmatter.linkPreview;
 //  the extra lines at the bottom is because you need to redefine variables for it take affect ..?
 // doesnt cascade it seems
 const colorfg = colors?.fg ? `--c-light: ${colors.fg};` : "";
