@@ -12,6 +12,7 @@ import Members from "../components/Members/Members.astro";
 import Achievement from "../components/Achievement.astro";
 
 import data from "./index.yml";
+import { Content as Introduction } from "./indexIntroduction.md";
 //console.log(data)
 
 //const collection = "epk";
@@ -74,29 +75,7 @@ const {
     <h2 class='subheading'>About</h2>
 
     <div class='font-serif text-xl indent-12 flex flex-col gap-2'>
-      <p>
-        Comprised of talented artists slone, jun.e, keanu., and riensu,
-        Seattle’s rising music group, <i>WEST OF EDEN</i>, has become a standout
-        in the Asian Indie Pop/R&B scene. The group has opened for major acts
-        such as K-pop icon <i>SHAUN</i> and bedroom-pop sensation <i>Rocco</i>,
-        while also headlining multiple sold-out shows with audiences exceeding
-        200 attendees.
-      </p>
-      <p>
-        In 2024, their social media presence skyrocketed, achieving a 1500%
-        following growth and generating over <i>1M+ views</i> across Instagram and
-        TikTok. On Spotify, they’ve achieved <i>1.9M+ streams</i>, and <i
-          >93,000+ monthly listeners</i
-        >—a staggering 13,900% increase within a single year. Furthermore, the
-        artists' solo music received an <i>additional 5M+ streams</i> in 2024.
-      </p>
-      <p>
-        Now signed to <i>88rising’s Future of Asian Music</i>, WEST OF EDEN is
-        poised to make a significant impact on both the Seattle and Asian music
-        scene in 2025. With their growing momentum, they are projected to draw
-        <i>crowds of 400+</i> to upcoming performances, solidifying their status
-        as an emerging force in the industry.
-      </p>
+      <Introduction />
     </div>
 
     <div class='grid grid-cols-2 md:grid-cols-3 text-xl gap-2 mt-6 mb-6'>

@@ -1,6 +1,6 @@
 ---
 import Footer from "../components/Footer.astro";
-
+import cover from "../images/link_preview.jpg";
 interface Props {
   title: string;
   colors?: {
@@ -21,23 +21,20 @@ const colorsStyles = colorfg + colorbg;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang='en'>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <meta charset='UTF-8' />
+    <meta name='description' content={description} />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
 
-    <meta name="og:description" content={description} />
-    <meta name="og:title" content={title} />
+    <meta name='og:description' content={description} />
+    <meta name='og:title' content={title} />
 
-    <meta
-      property="og:image"
-      content=`${import.meta.env.SITE}/socials_preview.jpg`
-    />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta property='og:image' content={cover.src} />
+    <meta name='twitter:card' content='summary_large_image' />
   </head>
   <body style={colorsStyles}>
     <slot />
