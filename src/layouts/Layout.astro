@@ -1,6 +1,8 @@
 ---
 import Footer from "../components/Footer.astro";
 import cover from "../images/link_preview.jpg";
+import * as description from "../pages/indexIntroduction.md";
+import removeMd from "remove-markdown";
 interface Props {
   title: string;
   colors?: {
@@ -8,11 +10,11 @@ interface Props {
     bg?: string;
   };
 }
-const description =
-  "WEST OF EDEN is a music collective based in Seattle, Washington with a focus on RNB and Indie Pop music. Made up of vocalists, riensu, slone, jun.e, and keanu., alongside in-house producers, videographers and graphic artists. ";
+// const description =
+//   "WEST OF EDEN is a music collective based in Seattle, Washington with a focus on RNB and Indie Pop music. Made up of vocalists, riensu, slone, jun.e, and keanu., alongside in-house producers, videographers and graphic artists. ";
 
 const { title, colors } = Astro.props;
-
+const desc = removeMd(description.rawContent());
 //  the extra lines at the bottom is because you need to redefine variables for it take affect ..?
 // doesnt cascade it seems
 const colorfg = colors?.fg ? `--c-light: ${colors.fg};` : "";
@@ -24,13 +26,13 @@ const colorsStyles = colorfg + colorbg;
 <html lang='en'>
   <head>
     <meta charset='UTF-8' />
-    <meta name='description' content={description} />
+    <meta name='description' content={desc} />
     <meta name='viewport' content='width=device-width' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
 
-    <meta name='og:description' content={description} />
+    <meta name='og:description' content={desc} />
     <meta name='og:title' content={title} />
 
     <meta property='og:image' content={cover.src} />
