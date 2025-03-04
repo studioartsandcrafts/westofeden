@@ -25,6 +25,7 @@ const {
   gallery,
   achievements,
   shows,
+  youtube,
 } = data;
 ---
 
@@ -151,8 +152,7 @@ const {
 
   <section class='mb-24'>
     <h2 class='subheading' id='mv'>MV</h2>
-    <YouTube id='Az2mtK5tAcE' class='mb-3' />
-    <!-- <YouTube id='Ct322Ofeih8' /> -->
+    {youtube.map((id: string) => <YouTube id={id} class='mb-3' />)}
   </section>
   <section class='mb-24'>
     <h2 class='subheading'>Show Highlights</h2>
