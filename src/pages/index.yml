@@ -104,28 +104,28 @@ shows:
       - "Attendance: 210 (SOLD OUT)"
 achievements:
   june:
-    listeners: 66.2k
+    listeners: 73.8k
     items:
       - title: "i don't mind"
         desc: "59k streams"
         imgsrc: "/images/idontmind.jpg"
         link: "https://open.spotify.com/track/4dNUZX3zlysGBvAgnULtIZ?si=2f61efc2077d4c39"
   keanu:
-    listeners: 45.6k
+    listeners: 51.2k
     items:
       - title: "ENDLESSLY"
-        desc: "27k streams"
+        desc: "28k streams"
         imgsrc: "/images/endlessly.jpg"
         link: "https://open.spotify.com/track/27DMbtlp5VKP1AnvwkoveS?si=549d958455fe4405"
   slone:
-    listeners: 210.7k
+    listeners: 222.5k
     items:
       - title: wish u were gone
-        desc: 3.6M streams
+        desc: 4.3M streams
         imgsrc: /images/wishuweregone.jpg
         link: "https://open.spotify.com/track/1G4GFMIOxCvPJusmWWcWrz?si=decaee4bae1f463c"
   riensu:
-    listeners: 57.4k
+    listeners: 59.7k
     items:
       - title: until we meet again
         subtitle: New Music Friday Spotify Editorial
@@ -134,18 +134,18 @@ achievements:
         link: "https://open.spotify.com/track/72B7YxcrXMAWqm0CH1qncS"
       - title: silly little love
         subtitle: ""
-        desc: 555k streams
+        desc: 576k streams
         imgsrc: /images/sillylittlelove.jpg
         link: "https://open.spotify.com/track/0N7DX9Cc2kyjoMq3s05q12"
 
   woe:
-    listeners: 96.6k
+    listeners: 85.8k
     items:
       - title: LIKE THAT
-        desc: 429k streams
+        desc: 464k streams
         imgsrc: /images/likethat.jpeg
         link: "https://open.spotify.com/track/5UMYMZwyvyelgWzCgbDG1Q"
       - title: my heart
-        desc: 322k streams
+        desc: 353k streams
         imgsrc: /images/myheart.jpeg
         link: "https://open.spotify.com/track/2vH4DeMhQnpb7rBCOZJCLe"
