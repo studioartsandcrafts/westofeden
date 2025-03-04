@@ -38,8 +38,7 @@ demographics:
     35-44: 8%
     45+: 7%
 
-youtube:
-  - Az2mtK5tAcE
+mv:
 
 gallery:
   /src/images/image1.jpg: no description written yet
@@ -139,6 +138,9 @@ achievements:
         link: "https://open.spotify.com/track/0N7DX9Cc2kyjoMq3s05q12"
 
   woe:
+    reels:
+      - Az2mtK5tAcE
+      - Kqn85uAp_DA
     listeners: 85.8k
     items:
       - title: LIKE THAT

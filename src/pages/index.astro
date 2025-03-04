@@ -25,7 +25,7 @@ const {
   gallery,
   achievements,
   shows,
-  youtube,
+  mv,
 } = data;
 ---
 
@@ -150,10 +150,19 @@ const {
     <Chart title='Age Range' data={demographics.ageRange} />
   </section>
 
-  <section class='mb-24'>
-    <h2 class='subheading' id='mv'>MV</h2>
-    {youtube.map((id: string) => <YouTube id={id} class='mb-3' />)}
-  </section>
+  {
+    mv && (
+      <section class='mb-24'>
+        <h2 class='subheading' id='mv'>
+          MV
+        </h2>
+        {mv.map((id: string) => (
+          <YouTube id={id} class='mb-3' />
+        ))}
+      </section>
+    )
+  }
+
   <section class='mb-24'>
     <h2 class='subheading'>Show Highlights</h2>
     <div class='flex flex-col gap-4 divide-y divide-fg'>
@@ -192,8 +201,11 @@ const {
             {achievements.woe.listeners} monthly listeners
           </p>
         </Fragment>
-        <YouTube id='Xv3SE0Ecgak' />
-        <YouTube id='Kqn85uAp_DA' />
+        {
+          achievements.woe.reels.map((id: string) => (
+            <YouTube id={id} class='mb-3' />
+          ))
+        }
       </Achievement>
 
       <Achievement items={achievements.riensu.items}>
