@@ -13,7 +13,7 @@ tracklist:
     src: /music/side_snippet.mp3
 streamingLinks:
   Spotify: "https://open.spotify.com/artist/5UAITt0KoASPqmtWm1Tphl"
-  Soundcloud: "https://soundcloud.com/westofeden-music"
+  Soundcloud: "https://soundcloud.com/wstofedn"
   Apple Music: "https://music.apple.com/us/artist/west-of-eden/1728708854"
 socialLinks:
   Tiktok: "https://www.tiktok.com/@wstofedn"
@@ -23,20 +23,19 @@ socialLinks:
 demographics:
   countries:
     - US
-    - Japan
     - Philippines
-    - Canada
+    - Taiwan
+    - Thailand
   genderSplit:
-    male: 48%
-    female: 45%
-    nonbinary/ unspecified: 7%
+    male: 42%
+    female: 50%
+    nonbinary/ unspecified: 8%
   ageRange:
-    <18: 4%
-    18-22: 26%
-    23-27: 35%
-    28-34: 20%
+    <18: 6%
+    18-24: 44%
+    25-34: 38%
     35-44: 8%
-    45+: 7%
+    45+: 4%
 
 mv:
 
@@ -66,13 +65,6 @@ shows:
       - Madame Lou’s in Seattle, Washington, United States
       - Opening Act
       - "Attendance: 300"
-  - title: "riensu & friends"
-    artist: WEST OF EDEN
-    date: March 2024
-    highlights:
-      - University Heights Center in Seattle, Washington, United States
-      - Headlining Act
-      - "Attendance: 200"
   - title: "ISAUW Keraton (Headlined by Rocco and Emily Sie)"
     artist: WEST OF EDEN
     date: May 2024
@@ -87,13 +79,6 @@ shows:
       - The Biltmore Cabaret in Vancouver, British Columbia, Canada
       - Featuring artist alongside Opening Act, COSETTE
       - "Attendance: 350"
-  - title: "Unite UW Alumni Fall Ball 2024"
-    artist: WEST OF EDEN
-    date: November 2024
-    highlights:
-      - University of Washington - UW Tower in Seattle, Washington, United States
-      - Headlining Act
-      - "Attendance: 220"
   - title: "LCN! x WEST OF EDEN x Rodney Tristan Show"
     artist: WEST OF EDEN
     date: January 9th, 2025
@@ -101,30 +86,79 @@ shows:
       - Barboza (Capitol Hill) in Seattle, Washington, United States
       - Co-headlining Act
       - "Attendance: 210 (SOLD OUT)"
+  - title: "Barrio Fiesta 2025 (Headlined by Adrian Milanio)"
+    artist: WEST OF EDEN
+    date: March 1st, 2025
+    highlights:
+      - Seattle University - Campion Ballroom in Seattle, Washington, United States 
+      - Opening Act
+      - "Attendance: 400"
+  - title: "ASUW Battle of the Bands 2025"
+    artist: WEST OF EDEN
+    date: April 11th, 2025
+    highlights:
+      - University of Washington - HUB in Seattle, Washington, United States 
+      - Co-headlining Act 
+      - "Attendance: 300"
+  - title: "VORTXZ - Call Me On The Phone U.S. Tour 2025"
+    artist: WEST OF EDEN
+    date: April 13th, 2025
+    highlights:
+      - Madame Lou’s in Seattle, Washington, United States 
+      - Opening Act 
+      - "Attendance: 200"
+  - title: "ISAUW Keraton (Headlined by Keenan Te, sunkis, & Yung Kai)"
+    artist: WEST OF EDEN
+    date: May 3rd, 2025
+    highlights:
+      - University of Washington - HUB Lawn in Seattle, Washington, United States 
+      - Opening Act 
+      - "Attendance: 500"
+  - title: "TSAUW Night Market"
+    artist: WEST OF EDEN
+    date: May 3rd, 2025
+    highlights:
+      - University of Washington - Red Square in Seattle, Washington, United States 
+      - Headlining Act 
+      - "Attendance: 10,000"
+  - title: "Capitol Hill Block Party"
+    artist: WEST OF EDEN
+    date: July 19th, 2025
+    highlights:
+      - Capitol Hill Block Party in Seattle, Washington, United States 
+      - Festival Act
+      - "Attendance: 10,000"
+  - title: "brynne w/ Minh – The Hometown Show 2025"
+    artist: keanu.
+    date: July 27th, 2025
+    highlights:
+      - The Paramount in Los Angeles, California, United States 
+      - Opening Act
+      - "Attendance: 400"
 achievements:
   june:
-    listeners: 73.8k
+    listeners: 86K
     items:
-      - title: "i don't mind"
-        desc: "59k streams"
-        imgsrc: "/images/idontmind.jpg"
+      - title: "my gf is on the other side of the globe rn"
+        desc: "196k streams"
+        imgsrc: "/images/mygf.jpg"
         link: "https://open.spotify.com/track/4dNUZX3zlysGBvAgnULtIZ?si=2f61efc2077d4c39"
   keanu:
-    listeners: 51.2k
+    listeners: 58k
     items:
-      - title: "ENDLESSLY"
-        desc: "28k streams"
-        imgsrc: "/images/endlessly.jpg"
-        link: "https://open.spotify.com/track/27DMbtlp5VKP1AnvwkoveS?si=549d958455fe4405"
+      - title: "GAS ft. Cybertrash"
+        desc: "50k streams"
+        imgsrc: "/images/gas.jpg"
+        link: "https://open.spotify.com/track/7nJBsc3fQSMQr2qJDkYSk6?si=16b1aab1292a4c15"
   slone:
-    listeners: 222.5k
+    listeners: 276k
     items:
       - title: wish u were gone
-        desc: 4.3M streams
+        desc: 6M streams
         imgsrc: /images/wishuweregone.jpg
         link: "https://open.spotify.com/track/1G4GFMIOxCvPJusmWWcWrz?si=decaee4bae1f463c"
   riensu:
-    listeners: 59.7k
+    listeners: 84k
     items:
       - title: until we meet again
         subtitle: New Music Friday Spotify Editorial
@@ -133,7 +167,7 @@ achievements:
         link: "https://open.spotify.com/track/72B7YxcrXMAWqm0CH1qncS"
       - title: silly little love
         subtitle: ""
-        desc: 576k streams
+        desc: 612k streams
         imgsrc: /images/sillylittlelove.jpg
         link: "https://open.spotify.com/track/0N7DX9Cc2kyjoMq3s05q12"
 
@@ -141,13 +175,13 @@ achievements:
     reels:
       - Az2mtK5tAcE
       - Kqn85uAp_DA
-    listeners: 85.8k
+    listeners: 106k
     items:
       - title: LIKE THAT
-        desc: 464k streams
+        desc: 734k streams
         imgsrc: /images/likethat.jpeg
         link: "https://open.spotify.com/track/5UMYMZwyvyelgWzCgbDG1Q"
       - title: my heart
-        desc: 353k streams
+        desc: 710k streams
         imgsrc: /images/myheart.jpeg
         link: "https://open.spotify.com/track/2vH4DeMhQnpb7rBCOZJCLe"
