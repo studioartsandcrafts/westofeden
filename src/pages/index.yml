@@ -2,12 +2,12 @@ tracklist:
   - title: LIKE THAT (preview)
     artist: "WEST OF EDEN, keanu., slone, jun.e"
     src: /music/likethat_snippet.mp3
-  - title: hide (preview)
-    artist: "WEST OF EDEN, keanu., jun.e, riensu"
-    src: /music/hide_snippet.mp3
-  - title: lead (preview)
-    artist: "WEST OF EDEN, keanu., riensu, yoku, jun.e,"
-    src: /music/lead_snippet.mp3
+  - title: my heart (preview)
+    artist: "WEST OF EDEN, riensu, jun.e, keanu., yoku, slone"
+    src: /music/myheart_snippet.mp3
+  - title: lights (preview)
+    artist: "WEST OF EDEN, riensu, keanu., slone"
+    src: /music/lights_snippet.mp3
   - title: side (preview)
     artist: "WEST OF EDEN, yoku, riensu, slone, keanu."
     src: /music/side_snippet.mp3
