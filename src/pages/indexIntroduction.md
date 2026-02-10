@@ -1,5 +1,5 @@
 ---
-linkPreview: "Comprised of talented artists slone, jun.e, keanu., and riensu, and 16 supporting creatives, Seattle’s rising music group, WEST OF EDEN, has become a standout in the Asian Indie Pop/R&B scene. The group has opened for major acts such as K-pop icon SHAUN and bedroom-pop sensation Rocco, while also headlining sold-out shows of their own."
+linkPreview: "Comprised of talented artists slone, jun.e, keanu., and riensu, and 14 supporting creatives, Seattle’s rising music group, WEST OF EDEN, has become a standout in the Asian Indie Pop/R&B scene. The group has opened for major acts such as K-pop icon SHAUN and bedroom-pop sensation Rocco, while also headlining sold-out shows of their own."
 ---
 
 Comprised of talented artists jun.e, slone, keanu., and riensu, and 14 supporting creatives, Seattle’s rising music group, **WEST OF EDEN**, has become a standout in the Asian Indie Pop/R&B scene. The group has shared bills with major acts such as **SHAUN**, **Rocco**, **demxntia**, **sunkis**, and **Yung Kai**, while also headlining **sold-out shows** of their own.
