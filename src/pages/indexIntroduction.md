@@ -6,5 +6,5 @@ Comprised of talented artists jun.e, slone, keanu., and riensu, and 14 supportin
 
 In the last year, their social media presence skyrocketed, achieving a 1500% following growth and generating over **5M+ views** across Instagram and TikTok. On Spotify, the group has achieved **8M+ streams** and **165k+ monthly listeners**. Furthermore, the artists’ solo music has received an **additional 15M+ streams**.
 
-The group is set to release their upcoming EP, **PLAYGROUND**, showcasing each member’s distinct style within a cohesive indie/dark R&B sound. They will support the release with a **West Coast tour in ~200-capacity venues**, delivering an intimate and high-energy live experience for fans.
+The group is gearing up to release their second EP, **PLAYGROUND**, showcasing each member’s distinct style within a cohesive indie/dark R&B sound. They will support the release with a **West Coast tour in ~200-capacity venues**, delivering an intimate and high-energy live experience for fans.
 
