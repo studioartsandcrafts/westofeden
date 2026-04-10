@@ -5,12 +5,21 @@ tracklist:
   - title: my heart (preview)
     artist: "WEST OF EDEN, riensu, jun.e, keanu., yoku, slone"
     src: /music/myheart_snippet.mp3
-  - title: lights (preview)
-    artist: "WEST OF EDEN, riensu, keanu., slone"
-    src: /music/lights_snippet.mp3
-  - title: side (preview)
-    artist: "WEST OF EDEN, yoku, riensu, slone, keanu."
-    src: /music/side_snippet.mp3
+  - title: LATER ft. pryme (preview)
+    artist: "WEST OF EDEN, keanu., slone, pryme"
+    src: /music/LATER.mp3
+  - title: AWOL ft. hevl (preview)
+    artist: "WEST OF EDEN, keanu., jun.e, hevl"
+    src: /music/AWOL.mp3
+  - title: WANT IT (preview)
+    artist: "WEST OF EDEN, riensu, keanu., slone, jun.e"
+    src: /music/WANT_IT.mp3
+  # - title: lights (preview)
+  #   artist: "WEST OF EDEN, riensu, keanu., slone"
+  #   src: /music/lights_snippet.mp3
+  # - title: side (preview)
+  #   artist: "WEST OF EDEN, yoku, riensu, slone, keanu."
+  #   src: /music/side_snippet.mp3
 streamingLinks:
   Spotify: "https://open.spotify.com/artist/5UAITt0KoASPqmtWm1Tphl"
   Soundcloud: "https://soundcloud.com/wstofedn"
@@ -116,24 +125,24 @@ shows:
       - "Attendance: 200 ($33-89)"
 achievements:
   june:
-    listeners: 86K
+    listeners: 105K
     items:
       - title: "my gf is on the other side of the globe rn"
-        desc: "196k streams"
+        desc: "373k streams"
         imgsrc: "/images/mygf.jpg"
         link: "https://open.spotify.com/album/0HyKGVUKqqM4kv7chkVWm8"
   keanu:
-    listeners: 144k
+    listeners: 119k
     items:
-      - title: "Sunday"
-        desc: "93k streams"
-        imgsrc: "/images/SUNDAY_coverart.jpg"
-        link: "https://open.spotify.com/track/65PTgScRi5WX09tQeNO81i"
+      - title: "Want you more"
+        desc: "136k streams"
+        imgsrc: "/images/wantumore.jpg"
+        link: "https://open.spotify.com/track/148M69fYwqj3PTnkjrtjA8"
   slone:
-    listeners: 300k
+    listeners: 267k
     items:
       - title: wish u were gone
-        desc: 10M streams
+        desc: 11.4M streams
         imgsrc: /images/wishuweregone.jpg
         link: "https://open.spotify.com/track/1G4GFMIOxCvPJusmWWcWrz"
   riensu:
@@ -146,7 +155,7 @@ achievements:
         link: "https://open.spotify.com/track/72B7YxcrXMAWqm0CH1qncS"
       - title: silly little love
         subtitle: ""
-        desc: 713k streams
+        desc: 730k streams
         imgsrc: /images/sillylittlelove.jpg
         link: "https://open.spotify.com/track/0N7DX9Cc2kyjoMq3s05q12"
 
@@ -157,10 +166,10 @@ achievements:
     listeners: 167k
     items:
       - title: my heart
-        desc: 1.9M streams
+        desc: 2.1M streams
         imgsrc: /images/myheart.jpeg
         link: "https://open.spotify.com/track/2vH4DeMhQnpb7rBCOZJCLe"
       - title: LIKE THAT
-        desc: 1.7M streams
+        desc: 2M streams
         imgsrc: /images/likethat.jpeg
         link: "https://open.spotify.com/track/5UMYMZwyvyelgWzCgbDG1Q"

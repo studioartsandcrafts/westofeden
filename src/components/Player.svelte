@@ -162,15 +162,17 @@
       </div>
     {/if}
     <div class="trackdetails">
-      <div class="">
-        <h2 class="font-serif italic text-2xl md:text-3xl">{track.title}</h2>
-        <p class="text-sm md:text-base">{track.artist}</p>
+      <div class="overflow-hidden">
+        <h2 class="font-serif italic text-xl md:text-2xl truncate">
+          {track.title}
+        </h2>
+        <p class="text-sm md:text-base truncate">{track.artist}</p>
       </div>
       <div class="flex flex-col items-end">
         <div class="flex gap-2">
           {#if currentTrack.src === track.src && currentIndex !== -1}
             <button
-              class="volumebtn relative py-0 px-1 font-serif italic text-2xl"
+              class="volumebtn relative py-0 px-1 font-serif italic text-xl md:text-2xl"
               type="button"
               aria-label="volume"
               use:blurOnEscape
@@ -206,7 +208,7 @@
           {/if}
 
           <button
-            class="playbtn font-serif italic text-2xl"
+            class="playbtn font-serif italic text-xl md:text-2xl"
             type="button"
             on:click={() => playPauseSong(index)}
             disabled={currentTrack.src === track.src &&
